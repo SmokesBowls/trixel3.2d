@@ -1,0 +1,33 @@
+{
+  "edge": "snow_to_rock",
+  "label": "Snow to Rock (Tundra → Mountain)",
+  "terrain_a": "tundra",
+  "terrain_b": "mountain",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [210, 235, 255],
+      "bottom": [90, 100, 120]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[230, 245, 255], [200, 220, 240]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.50,
+      "thickness": 0.05,
+      "color": [170, 190, 210],
+      "jitter": 0.20,
+      "waviness": 0.25,
+      "gap_chance": 0.08
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[110, 120, 140], [80, 85, 100]]
+    }
+  ]
+}

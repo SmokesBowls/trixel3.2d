@@ -1,0 +1,33 @@
+{
+  "edge": "grass_to_dirt",
+  "label": "Grass to Dirt (Forest → Desert)",
+  "terrain_a": "forest",
+  "terrain_b": "desert",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [34, 100, 20],
+      "bottom": [180, 130, 60]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[60, 130, 35], [40, 90, 20]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.50,
+      "thickness": 0.05,
+      "color": [50, 100, 30],
+      "jitter": 0.25,
+      "waviness": 0.30,
+      "gap_chance": 0.10
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[200, 160, 70], [160, 120, 50]]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "terrain": "beach",
+  "label": "Beach Coastal",
+  "environment": "coastal",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [135, 206, 235],
+      "bottom": [238, 214, 175]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[245, 230, 150], [200, 175, 100]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.55,
+      "thickness": 0.06,
+      "color": [80, 160, 200],
+      "jitter": 0.20,
+      "waviness": 0.30,
+      "gap_chance": 0.05
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.03,
+      "colors": [[255, 255, 255], [220, 240, 255]]
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.70
+    }
+  ]
+}

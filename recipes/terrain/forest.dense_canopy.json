@@ -1,0 +1,37 @@
+{
+  "terrain": "forest",
+  "label": "Forest",
+  "environment": "temperate",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [34, 139, 34],
+      "bottom": [20, 80, 20]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.15,
+      "colors": [[100, 180, 60], [60, 120, 30]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.45,
+      "thickness": 0.06,
+      "color": [50, 100, 30],
+      "jitter": 0.25,
+      "waviness": 0.35,
+      "gap_chance": 0.10
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[30, 60, 20], [40, 80, 25], [25, 50, 15]]
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

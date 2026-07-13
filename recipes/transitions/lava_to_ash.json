@@ -1,0 +1,38 @@
+{
+  "edge": "lava_to_ash",
+  "label": "Lava to Ash (Volcano → Cooling)",
+  "terrain_a": "volcano",
+  "terrain_b": "default",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [80, 20, 0],
+      "bottom": [75, 75, 75]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[200, 40, 0], [150, 20, 0]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.52,
+      "thickness": 0.05,
+      "color": [120, 30, 0],
+      "jitter": 0.30,
+      "waviness": 0.25,
+      "gap_chance": 0.12
+    },
+    {
+      "type": "ember_scatter",
+      "count": 6,
+      "colors": [[255, 180, 0], [255, 100, 0], [200, 60, 0]]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[95, 95, 95], [60, 60, 60]]
+    }
+  ]
+}

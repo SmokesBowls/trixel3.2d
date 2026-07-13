@@ -1,0 +1,32 @@
+{
+  "terrain": "desert",
+  "label": "Desert",
+  "environment": "arid",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [255, 200, 50],
+      "bottom": [200, 150, 50]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[230, 180, 80], [180, 130, 40]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.60,
+      "thickness": 0.03,
+      "color": [210, 160, 40],
+      "jitter": 0.10,
+      "waviness": 0.15,
+      "gap_chance": 0.05
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

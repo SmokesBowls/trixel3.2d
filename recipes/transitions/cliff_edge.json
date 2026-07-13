@@ -1,0 +1,58 @@
+{
+  "edge": "cliff_edge",
+  "label": "Cliff Edge (Rock Face → Ground)",
+  "terrain_a": "mountain",
+  "terrain_b": "default",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [110, 100, 90],
+      "bottom": [50, 70, 35]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[150, 130, 110], [90, 80, 70]]
+    },
+    {
+      "type": "v_crack",
+      "x": 0.20,
+      "y_start": 0.0,
+      "y_end": 0.55,
+      "color": [50, 45, 40],
+      "jitter": 0.30,
+      "gap_chance": 0.15,
+      "branch_chance": 0.20
+    },
+    {
+      "type": "v_crack",
+      "x": 0.52,
+      "y_start": 0.0,
+      "y_end": 0.58,
+      "color": [50, 45, 40],
+      "jitter": 0.30,
+      "gap_chance": 0.12,
+      "branch_chance": 0.18
+    },
+    {
+      "type": "v_crack",
+      "x": 0.78,
+      "y_start": 0.0,
+      "y_end": 0.52,
+      "color": [50, 45, 40],
+      "jitter": 0.28,
+      "gap_chance": 0.15,
+      "branch_chance": 0.15
+    },
+    {
+      "type": "h_band",
+      "y": 0.55,
+      "thickness": 0.05,
+      "color": [45, 40, 35],
+      "jitter": 0.10,
+      "waviness": 0.10,
+      "gap_chance": 0.05
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "terrain": "ocean",
+  "label": "Ocean",
+  "environment": "pelagic",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [20, 80, 150],
+      "bottom": [10, 50, 120]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.10,
+      "colors": [[30, 100, 180], [50, 130, 200]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.50,
+      "thickness": 0.08,
+      "color": [10, 60, 120],
+      "jitter": 0.20,
+      "waviness": 0.40,
+      "gap_chance": 0.10
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.03,
+      "colors": [[200, 230, 255], [180, 215, 245]]
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

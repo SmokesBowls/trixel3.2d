@@ -1,0 +1,34 @@
+{
+  "provenance_records": [
+    {
+      "target_file": "recipes/terrain/tundra.frozen_plain.json",
+      "original_source_file": "/home/mytruelove/Desktop/burdens_of_a_forgotten_past/conductor/conductor_building_blocks/trixelcomposer/recipes/terrain/tundra.frozen_plain.json",
+      "sha256": "15b052ed9c1cea63af842d0ce1216ac1ea670b7fd718882cf431a89f1f4a5927",
+      "description": "Golden tundra terrain recipe definition."
+    },
+    {
+      "target_file": "recipes/schema/trixel_recipe.schema.json",
+      "original_source_file": "/home/mytruelove/Desktop/burdens_of_a_forgotten_past/conductor/conductor_building_blocks/trixelcomposer/recipes/schema/trixel_recipe.schema.json",
+      "sha256": "c97174474c443a4919d959a4039872408a1e7bbb50ba21f3b4985bea8ad2e60c",
+      "description": "Trixel recipe validation schema."
+    },
+    {
+      "target_file": "trixel/trixel_recipe_renderer.py",
+      "original_source_file": "/home/mytruelove/Desktop/burdens_of_a_forgotten_past/conductor/conductor_building_blocks/trixelcomposer/terminal_trixel.py",
+      "sha256": "8c70bd6dd8d08acbc34e0a71bb4a32b2017f9691595b79e3f3365cd1291ae968",
+      "description": "Adapted engine-neutral Trixel Composer CLI rendering logic."
+    },
+    {
+      "target_file": "fixtures/worldfield_fixture.json",
+      "original_source_file": "/mnt/data-drive/godotollama-development/trixel_proof/worldfield_fixture.json",
+      "sha256": "6765eb42f3e434bd8545f37d0962b1ec866e4bac10433b651aeff522b1dab7db",
+      "description": "16x16 circular-hill WorldField handshake JSON, linking to tundra_texture.png."
+    },
+    {
+      "target_file": "fixtures/tundra_texture.png",
+      "original_source_file": "/mnt/data-drive/godotollama-development/trixel_proof/tundra_texture.png",
+      "sha256": "d94780040e9759f6483c66434e98fdf7bd6e2bfc00c6c77653d50ce8d39ae5a4",
+      "description": "Golden tundra_texture.png visual terrain character artifact."
+    }
+  ]
+}

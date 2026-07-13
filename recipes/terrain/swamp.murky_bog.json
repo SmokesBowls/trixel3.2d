@@ -1,0 +1,37 @@
+{
+  "terrain": "swamp",
+  "label": "Swamp",
+  "environment": "wetland",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [60, 90, 40],
+      "bottom": [40, 70, 30]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.15,
+      "colors": [[50, 70, 35], [40, 60, 25], [60, 80, 40]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.52,
+      "thickness": 0.04,
+      "color": [40, 80, 30],
+      "jitter": 0.30,
+      "waviness": 0.40,
+      "gap_chance": 0.12
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[80, 110, 50], [100, 120, 60]]
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

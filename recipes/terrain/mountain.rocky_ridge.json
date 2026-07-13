@@ -1,0 +1,52 @@
+{
+  "terrain": "mountain",
+  "label": "Mountain",
+  "environment": "highland",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [100, 120, 150],
+      "bottom": [80, 70, 60]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.12,
+      "colors": [[130, 110, 90], [160, 150, 140]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.40,
+      "thickness": 0.03,
+      "color": [200, 210, 220],
+      "jitter": 0.15,
+      "waviness": 0.20,
+      "gap_chance": 0.08
+    },
+    {
+      "type": "v_crack",
+      "x": 0.35,
+      "y_start": 0.0,
+      "y_end": 0.45,
+      "color": [80, 90, 100],
+      "jitter": 0.30,
+      "gap_chance": 0.15,
+      "branch_chance": 0.10
+    },
+    {
+      "type": "v_crack",
+      "x": 0.65,
+      "y_start": 0.0,
+      "y_end": 0.45,
+      "color": [80, 90, 100],
+      "jitter": 0.30,
+      "gap_chance": 0.15,
+      "branch_chance": 0.10
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

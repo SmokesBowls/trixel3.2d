@@ -1,0 +1,32 @@
+{
+  "terrain": "default",
+  "label": "Generic",
+  "environment": "unknown",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [80, 100, 130],
+      "bottom": [60, 80, 50]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.12,
+      "colors": [[120, 110, 90], [90, 80, 70]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.55,
+      "thickness": 0.04,
+      "color": [100, 100, 80],
+      "jitter": 0.15,
+      "waviness": 0.20,
+      "gap_chance": 0.08
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 100],
+      "marker_y": 0.72
+    }
+  ]
+}

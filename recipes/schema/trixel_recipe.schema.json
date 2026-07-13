@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TrixelRecipe",
+  "type": "object",
+  "required": ["terrain", "passes"],
+  "properties": {
+    "scene_id": { "type": "string", "description": "Canonical scene identifier" },
+    "terrain": { "type": "string", "description": "Semantic terrain type (volcano, forest, beach, etc.)" },
+    "label": { "type": "string", "description": "Human-readable label" },
+    "environment": { "type": "string", "description": "Broader biome context" },
+    "entity_count": { "type": "integer", "minimum": 0 },
+    "canvas": {
+      "type": "object",
+      "properties": {
+        "width": { "type": "integer", "default": 16 },
+        "height": { "type": "integer", "default": 16 }
+      }
+    },
+    "transform": {
+      "type": "object",
+      "description": "Pixel-aligned transform applied after all terrain passes. Rotation before flips.",
+      "properties": {
+        "rotate":  { "type": "integer", "enum": [0, 90, 180, 270], "default": 0 },
+        "flip_x":  { "type": "boolean", "default": false },
+        "flip_y":  { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "passes": {
+      "type": "array",
+      "description": "Ordered execution steps for terminal_trixel.py",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["gradient_fill", "noise_scatter", "h_band", "v_crack", "ember_scatter", "entity_marker"]
+          },
+          "seed": { "type": ["integer", "null"], "description": "Deterministic RNG seed (null = runtime random)" },
+          "top": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 255 } },
+          "bottom": { "type": "array", "items": { "type": "integer", "minimum": 0, "maximum": 255 } },
+          "density": { "type": "number", "minimum": 0, "maximum": 1 },
+          "colors": { "type": "array", "items": { "type": "array", "items": { "type": "integer" } } },
+          "y": { "type": ["number", "integer"] },
+          "x": { "type": ["number", "integer"] },
+          "thickness": { "type": ["number", "integer"] },
+          "count": { "type": "integer" },
+          "color": { "type": "array", "items": { "type": "integer" } }
+        }
+      }
+    }
+  }
+}

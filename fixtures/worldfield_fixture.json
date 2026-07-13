@@ -1,0 +1,1290 @@
+{
+  "profile": "TRIXEL_PROFILE_BROAD_TERRACES",
+  "width": 16,
+  "height": 16,
+  "cell_size": 1.0,
+  "height_scale": 4.0,
+  "cells": [
+    {
+      "field_x": 0,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 5,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 6,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 7,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 10,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 11,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 12,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 0,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 5,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 6,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 7,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 8,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 9,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 10,
+      "field_y": 1,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 11,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 12,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 1,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 5,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 6,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 7,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 8,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 9,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 10,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 11,
+      "field_y": 2,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 12,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 2,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 3,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 4,
+      "field_y": 3,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 5,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 7,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 8,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 9,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 10,
+      "field_y": 3,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 3,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 12,
+      "field_y": 3,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 13,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 3,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 4,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 4,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 4,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 4,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 4,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 7,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 8,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 9,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 10,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 4,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 4,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 13,
+      "field_y": 4,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 4,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 4,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 5,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 5,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 5,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 5,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 7,
+      "field_y": 5,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 8,
+      "field_y": 5,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 9,
+      "field_y": 5,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 10,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 5,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 5,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 5,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 5,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 6,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 6,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 6,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 6,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 6,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 6,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 6,
+      "field_y": 6,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 7,
+      "field_y": 6,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 6,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 6,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 10,
+      "field_y": 6,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 11,
+      "field_y": 6,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 6,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 6,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 6,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 6,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 7,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 7,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 7,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 7,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 7,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 7,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 6,
+      "field_y": 7,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 7,
+      "field_y": 7,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 7,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 7,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 10,
+      "field_y": 7,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 11,
+      "field_y": 7,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 7,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 7,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 7,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 7,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 8,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 8,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 8,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 8,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 8,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 8,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 6,
+      "field_y": 8,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 7,
+      "field_y": 8,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 8,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 8,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 10,
+      "field_y": 8,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 11,
+      "field_y": 8,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 8,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 8,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 8,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 8,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 9,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 9,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 9,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 9,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 9,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 9,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 6,
+      "field_y": 9,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 7,
+      "field_y": 9,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 9,
+      "elevation": 1.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 9,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 10,
+      "field_y": 9,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 11,
+      "field_y": 9,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 9,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 9,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 9,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 9,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 10,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 10,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 2,
+      "field_y": 10,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 4,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 10,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 7,
+      "field_y": 10,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 8,
+      "field_y": 10,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 9,
+      "field_y": 10,
+      "elevation": 0.75
+    },
+    {
+      "field_x": 10,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 10,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 13,
+      "field_y": 10,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 10,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 15,
+      "field_y": 10,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 11,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 11,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 11,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 3,
+      "field_y": 11,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 4,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 5,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 7,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 8,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 9,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 10,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 11,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 12,
+      "field_y": 11,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 13,
+      "field_y": 11,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 14,
+      "field_y": 11,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 11,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 12,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 4,
+      "field_y": 12,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 5,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 6,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 7,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 8,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 9,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 10,
+      "field_y": 12,
+      "elevation": 0.5
+    },
+    {
+      "field_x": 11,
+      "field_y": 12,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 12,
+      "field_y": 12,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 13,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 12,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 5,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 6,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 7,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 8,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 9,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 10,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 11,
+      "field_y": 13,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 12,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 13,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 5,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 6,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 7,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 8,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 9,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 10,
+      "field_y": 14,
+      "elevation": 0.25
+    },
+    {
+      "field_x": 11,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 12,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 14,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 0,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 1,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 2,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 3,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 4,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 5,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 6,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 7,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 8,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 9,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 10,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 11,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 12,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 13,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 14,
+      "field_y": 15,
+      "elevation": 0.0
+    },
+    {
+      "field_x": 15,
+      "field_y": 15,
+      "elevation": 0.0
+    }
+  ],
+  "texture_path": "tundra_texture.png"
+}

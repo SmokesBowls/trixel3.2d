@@ -1,0 +1,55 @@
+{
+  "scene_id": "002_molten_descent",
+  "terrain": "volcano",
+  "label": "Volcanic",
+  "environment": "coastal",
+  "entity_count": 7,
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [30, 10, 0],
+      "bottom": [80, 20, 0]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.12,
+      "colors": [[255, 80, 0], [200, 40, 0], [150, 20, 0]],
+      "seed": 42
+    },
+    {
+      "type": "h_band",
+      "y": 0.6,
+      "thickness": 0.05,
+      "color": [0, 42, 100],
+      "jitter": 0.35,
+      "waviness": 0.25,
+      "gap_chance": 0.12,
+      "seed": 88
+    },
+    {
+      "type": "v_crack",
+      "x": 0.55,
+      "y_start": 0.45,
+      "y_end": 0.95,
+      "color": [255, 100, 0],
+      "glow": true,
+      "glow_color": [150, 35, 0],
+      "jitter": 0.45,
+      "gap_chance": 0.18,
+      "branch_chance": 0.25,
+      "seed": 77
+    },
+    {
+      "type": "ember_scatter",
+      "count": 8,
+      "colors": [[255, 200, 0], [255, 140, 0], [255, 255, 100]],
+      "seed": 77
+    },
+    {
+      "type": "entity_marker",
+      "color": [255, 255, 0],
+      "seed": 99
+    }
+  ]
+}

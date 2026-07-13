@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TileAddress",
+  "description": "Complete spatial descriptor for one visible trixel tile. Encodes world position, camera-relative orientation, visible face, and recipe reference.",
+  "type": "object",
+  "required": ["world_cell", "camera_relative", "visible_face", "view_vector", "surface_normal", "tile_address", "recipe"],
+  "properties": {
+    "world_cell": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Absolute [x, y, z] grid position in world space"
+    },
+    "camera_relative": {
+      "type": "object",
+      "required": ["horizontal", "vertical", "depth"],
+      "properties": {
+        "horizontal": { "type": "string", "enum": ["left", "right"] },
+        "vertical":   { "type": "string", "enum": ["up", "down"] },
+        "depth":      { "type": "string", "enum": ["forward", "back"] }
+      },
+      "description": "Maps world axes to camera-relative directions for this view"
+    },
+    "visible_face": {
+      "type": "string",
+      "enum": ["top", "bottom", "wall", "slope", "edge", "side", "north", "south", "east", "west"],
+      "description": "Which face of this cell is visible to the camera"
+    },
+    "view_vector": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Normalised vector from camera toward tile"
+    },
+    "surface_normal": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "Outward normal of the visible face"
+    },
+    "tile_address": {
+      "type": "string",
+      "pattern": "^[dulrfb]-?\\d+\\.[dulrfb]-?\\d+\\.[dulrfb]-?\\d+$",
+      "description": "Compact address string encoding position and camera-relative direction. Format: {h_prefix}{x}.{v_prefix}{y}.{d_prefix}{z}",
+      "examples": ["l49.d19.f57", "r12.u8.b3", "d0.d0.f100"]
+    },
+    "recipe": {
+      "type": "string",
+      "description": "Recipe identifier: terrain type and variant, e.g. 'volcano.branching_lava'"
+    },
+    "neighbor_cells": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "integer" },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "description": "Adjacent cells in face-neighbor order [top, bottom, north, south, east, west]",
+      "default": []
+    }
+  }
+}

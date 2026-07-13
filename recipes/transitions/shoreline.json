@@ -1,0 +1,33 @@
+{
+  "edge": "shoreline",
+  "label": "Shoreline (Sand → Water)",
+  "terrain_a": "beach",
+  "terrain_b": "ocean",
+  "canvas": { "width": 16, "height": 16 },
+  "passes": [
+    {
+      "type": "gradient_fill",
+      "top": [238, 214, 175],
+      "bottom": [20, 80, 150]
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.08,
+      "colors": [[245, 230, 150], [200, 175, 100]]
+    },
+    {
+      "type": "h_band",
+      "y": 0.50,
+      "thickness": 0.07,
+      "color": [80, 160, 200],
+      "jitter": 0.25,
+      "waviness": 0.45,
+      "gap_chance": 0.10
+    },
+    {
+      "type": "noise_scatter",
+      "density": 0.03,
+      "colors": [[255, 255, 255], [210, 240, 255]]
+    }
+  ]
+}
