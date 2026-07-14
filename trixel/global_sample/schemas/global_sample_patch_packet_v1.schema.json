@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://trixel.local/schemas/global_sample_patch_packet_v1.schema.json",
+  "title": "GlobalSamplePatchPacketV1",
+  "description": "Neutral 16x16 logical patch with 17x17 authoritative cell-corner samples.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_id", "patch_address", "cell_dimensions", "sample_dimensions", "sample_layout", "sample_order", "art_dimensions", "art_region", "elevation_samples", "terrain_recipe", "canonical_topology", "render_surfaces"],
+  "properties": {
+    "contract_id": {"const": "trixel.global_sample_patch.v1"},
+    "patch_address": {"$ref": "#/definitions/integer_pair"},
+    "cell_dimensions": {"$ref": "#/definitions/exact_16_pair"},
+    "sample_dimensions": {"$ref": "#/definitions/exact_17_pair"},
+    "sample_layout": {"const": "cell_corners"},
+    "sample_order": {"const": "row_major_local_z_then_local_x"},
+    "art_dimensions": {"$ref": "#/definitions/exact_16_pair"},
+    "art_region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["texture_path", "pixel_origin", "pixel_dimensions"],
+      "properties": {
+        "texture_path": {"type": "string", "minLength": 1},
+        "pixel_origin": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 2, "maxItems": 2},
+        "pixel_dimensions": {"$ref": "#/definitions/exact_16_pair"}
+      }
+    },
+    "elevation_samples": {"type": "array", "items": {"type": "number"}, "minItems": 289, "maxItems": 289},
+    "terrain_recipe": {"type": "string", "minLength": 1},
+    "canonical_topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top_position_count", "top_triangle_count", "top_index_count"],
+      "properties": {
+        "top_position_count": {"const": 289},
+        "top_triangle_count": {"const": 512},
+        "top_index_count": {"const": 1536}
+      }
+    },
+    "render_surfaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "cliffs", "bottom"],
+      "properties": {
+        "top": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source"],
+          "properties": {"source": {"const": "canonical_topology"}}
+        },
+        "cliffs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {"status": {"const": "not_generated"}}
+        },
+        "bottom": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {"status": {"const": "not_generated"}}
+        }
+      }
+    }
+  },
+  "definitions": {
+    "integer_pair": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+    "exact_16_pair": {"type": "array", "items": [{"const": 16}, {"const": 16}], "additionalItems": false, "minItems": 2, "maxItems": 2},
+    "exact_17_pair": {"type": "array", "items": [{"const": 17}, {"const": 17}], "additionalItems": false, "minItems": 2, "maxItems": 2}
+  }
+}

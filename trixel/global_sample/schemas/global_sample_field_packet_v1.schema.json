@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://trixel.local/schemas/global_sample_field_packet_v1.schema.json",
+  "title": "GlobalSamplePatchFieldPacketV1",
+  "description": "Neutral rectangular registry of 16-cell patches sharing global X/Z sample addresses.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_id", "patch_contract_id", "field_patch_origin", "field_patch_dimensions", "patch_cell_dimensions", "field_cell_dimensions", "global_sample_dimensions", "elevation_authority", "materials", "patches", "canonical_field_topology", "geometry_policy"],
+  "properties": {
+    "contract_id": {"const": "trixel.global_sample_patch_field.v1"},
+    "patch_contract_id": {"const": "trixel.global_sample_patch.v1"},
+    "field_patch_origin": {"$ref": "#/definitions/integer_pair"},
+    "field_patch_dimensions": {"$ref": "#/definitions/positive_pair"},
+    "patch_cell_dimensions": {"$ref": "#/definitions/exact_16_pair"},
+    "field_cell_dimensions": {"$ref": "#/definitions/positive_pair"},
+    "global_sample_dimensions": {"$ref": "#/definitions/positive_pair"},
+    "elevation_authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "algorithm_id", "address_space"],
+      "properties": {
+        "source": {"const": "global_sample_coordinates"},
+        "algorithm_id": {"type": "string", "minLength": 1},
+        "address_space": {"const": "global_sample_xz"}
+      }
+    },
+    "materials": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["texture_path", "logical_art_dimensions"],
+        "properties": {
+          "texture_path": {"type": "string", "minLength": 1},
+          "logical_art_dimensions": {"$ref": "#/definitions/exact_16_pair"}
+        }
+      }
+    },
+    "patches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["patch_address", "material_id"],
+        "properties": {
+          "patch_address": {"$ref": "#/definitions/integer_pair"},
+          "material_id": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "canonical_field_topology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_count", "chunk_local_top_position_count", "top_triangle_count", "top_index_count", "unique_global_sample_count", "neighbor_boundary_count"],
+      "properties": {
+        "chunk_count": {"type": "integer", "minimum": 1},
+        "chunk_local_top_position_count": {"type": "integer", "minimum": 289},
+        "top_triangle_count": {"type": "integer", "minimum": 512},
+        "top_index_count": {"type": "integer", "minimum": 1536},
+        "unique_global_sample_count": {"type": "integer", "minimum": 289},
+        "neighbor_boundary_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "geometry_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chunk_surface", "skirts", "cliffs", "bottoms", "seam_geometry"],
+      "properties": {
+        "chunk_surface": {"const": "canonical_top_only"},
+        "skirts": {"const": false},
+        "cliffs": {"const": false},
+        "bottoms": {"const": false},
+        "seam_geometry": {"const": false}
+      }
+    }
+  },
+  "definitions": {
+    "integer_pair": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+    "positive_pair": {"type": "array", "items": {"type": "integer", "minimum": 1}, "minItems": 2, "maxItems": 2},
+    "exact_16_pair": {"type": "array", "items": [{"const": 16}, {"const": 16}], "additionalItems": false, "minItems": 2, "maxItems": 2}
+  }
+}
