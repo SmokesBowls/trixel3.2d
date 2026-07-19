@@ -1,0 +1,39 @@
+{
+  "manifest_contract": "texel_connected_surface_manifest.v1",
+  "milestone": "Connected-surface construction policy proven on the pinned Texel fixture: one coherent terrain slab replaces 256 independent floating columns",
+  "visually_accepted": "2026-07-19",
+  "source_fixture": {
+    "file": "texel_grass_tile_16x16.png",
+    "sha256": "ab5cb28b956f418272dacb367395da958671faf7c6e096e2d5b2cf6fa4363d51",
+    "note": "Same pinned fixture as the first handshake; every pixel color and derived height preserved exactly."
+  },
+  "construction": {
+    "topology_policy": "HEIGHT_FIELD_CONNECTED_SURFACE",
+    "gap_fill_mode": "CONNECTED_SLAB",
+    "adjacency_policy": "SHARED_EDGE_STITCHED",
+    "request_id": "t32dreq_001241884d12dff0",
+    "surface_id": "t32dsurface_f024725d200e470c",
+    "faces": {"top": 256, "bottom": 256, "interior_walls": 315, "perimeter_walls": 64, "total": 891},
+    "lattice_comparison_faces_total": 1536
+  },
+  "declared_limitation": {
+    "name": "T_JUNCTION_WALL_EDGES",
+    "statement": "Walls are full-edge quads; where three or more differing heights meet at a corner, vertical wall side edges form exact collinear T-junction overlaps. Every cell boundary is coordinate-coincident (proven: no cracks or holes), but the mesh is not strictly edge-manifold.",
+    "consequence": "Must be resolved (wall splitting per height interval) before collision, mesh processing, or LOD consume this geometry. Does not invalidate this milestone and does not affect rendering.",
+    "proof_note": "The edge-manifold formalization was tested, failed by exactly this overlap class, and was replaced by the full boundary-coincidence proof in tests/test_trixel32d_connected_surface.py."
+  },
+  "evidence_images": {
+    "stitched_render": {
+      "file": "texel_connected_surface_render.png",
+      "sha256": "842ca11de8851082e979c5218a4b43918db5a4af0f06f7ea285849047fac4feb"
+    },
+    "lattice_vs_connected": {
+      "file": "texel_lattice_vs_connected.png",
+      "sha256": "885a6274bd6f67e6d3667d3e1aca3733510885eb9cc89554af651d13a5da9473",
+      "note": "Left panel is the exact accepted lattice evidence bytes (9505d3fb...), never rerendered."
+    }
+  },
+  "built_response": "texel_connected_surface_built_response.json",
+  "regeneration": "tools/render_texel_connected_surface_evidence.py (deterministic from the pinned source)",
+  "closure": "These exact images and hashes are the accepted evidence; do not rerender to replace them."
+}

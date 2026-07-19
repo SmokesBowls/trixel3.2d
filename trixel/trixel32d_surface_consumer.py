@@ -14,6 +14,13 @@ from trixel.trixel32d_surface_emitter import emit_rejected_surface
 REQUEST_CONTRACT = "trixel32d_surface_request.v1"
 RECIPE_ID_PATTERN = re.compile(r"^[a-z0-9]+(?:[._-][a-z0-9]+)*$")
 
+# Each topology policy declares exactly one coherent gap-fill declaration pair:
+# (gap_fill.mode, gap_fill.adjacency_policy). Mixed declarations reject.
+TOPOLOGY_GAP_FILL_REQUIREMENTS = {
+    "HEIGHT_FIELD_CELL_EXTRUSION": ("PER_CELL_EXTRUSION", "ALL_FACES_INDEPENDENT"),
+    "HEIGHT_FIELD_CONNECTED_SURFACE": ("CONNECTED_SLAB", "SHARED_EDGE_STITCHED"),
+}
+
 
 class RequestValidationError(ValueError):
     """The first fail-closed request validation failure."""
@@ -73,8 +80,12 @@ def validate_surface_request(request: object, *, recipe_root: Path) -> dict[str,
     construction = _mapping(request.get("construction"), "construction")
     if construction.get("ordering") != "ROW_MAJOR":
         _reject("construction.ordering must be 'ROW_MAJOR'")
-    if construction.get("topology_policy") != "HEIGHT_FIELD_CELL_EXTRUSION":
-        _reject("construction.topology_policy must be 'HEIGHT_FIELD_CELL_EXTRUSION'")
+    topology_policy = construction.get("topology_policy")
+    if topology_policy not in TOPOLOGY_GAP_FILL_REQUIREMENTS:
+        _reject(
+            "construction.topology_policy must be one of "
+            + " or ".join(f"'{policy}'" for policy in sorted(TOPOLOGY_GAP_FILL_REQUIREMENTS))
+        )
     if construction.get("appearance_policy") != "RECIPE_REFERENCE":
         _reject("construction.appearance_policy must be 'RECIPE_REFERENCE'")
 
@@ -103,10 +114,14 @@ def validate_surface_request(request: object, *, recipe_root: Path) -> dict[str,
     gap = _mapping(request.get("gap_fill"), "gap_fill")
     if gap.get("enabled") is not True:
         _reject("gap_fill.enabled must be true")
-    if gap.get("mode") != "PER_CELL_EXTRUSION":
-        _reject("gap_fill.mode must be 'PER_CELL_EXTRUSION'")
-    if gap.get("adjacency_policy") != "ALL_FACES_INDEPENDENT":
-        _reject("gap_fill.adjacency_policy must be 'ALL_FACES_INDEPENDENT'")
+    required_mode, required_adjacency = TOPOLOGY_GAP_FILL_REQUIREMENTS[topology_policy]
+    if gap.get("mode") != required_mode:
+        _reject(f"gap_fill.mode must be '{required_mode}' for topology policy '{topology_policy}'")
+    if gap.get("adjacency_policy") != required_adjacency:
+        _reject(
+            f"gap_fill.adjacency_policy must be '{required_adjacency}' "
+            f"for topology policy '{topology_policy}'"
+        )
     _rgba(gap.get("resolved_color"), "gap_fill.resolved_color")
     _positive_finite(gap.get("thickness_local_units"), "gap_fill.thickness_local_units")
 
