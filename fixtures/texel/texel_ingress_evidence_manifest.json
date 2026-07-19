@@ -1,0 +1,30 @@
+{
+  "manifest_contract": "texel_ingress_evidence_manifest.v1",
+  "milestone": "First Texel-to-Trixel handshake: natural language -> Texel pixels -> pinned image -> Trixel interpretation -> geometry",
+  "visually_accepted": "2026-07-18",
+  "source_fixture": {
+    "file": "texel_grass_tile_16x16.png",
+    "sha256": "ab5cb28b956f418272dacb367395da958671faf7c6e096e2d5b2cf6fa4363d51",
+    "pin": "texel_grass_tile_16x16.pin.json"
+  },
+  "construction": {
+    "request_id": "t32dreq_001241884d12dff0",
+    "surface_id": "t32dsurface_245be4a987cf6fd9",
+    "elevation_policy": "LUMINANCE_BT709",
+    "max_height_layers": 6,
+    "built_response": "texel_ingress_built_response.json",
+    "note": "The floating-lattice appearance is the existing ALL_FACES_INDEPENDENT per-cell extrusion policy — a construction style to improve later, not a handshake defect."
+  },
+  "evidence_images": {
+    "side_by_side": {
+      "file": "texel_ingress_side_by_side.png",
+      "sha256": "3e444d5a1ac1d79a75e144c1fb87f0a25fee87529bb3d1904d3add539b4e5b7e"
+    },
+    "trixel_only_render": {
+      "file": "texel_ingress_trixel_render.png",
+      "sha256": "9505d3fbed324c389c0d595087dc60f7a66130bd604175fd64bd11d256290852"
+    }
+  },
+  "regeneration": "tools/render_texel_ingress_evidence.py (deterministic from the pinned source)",
+  "closure": "These exact images and hashes are the accepted evidence; do not rerender to replace them."
+}

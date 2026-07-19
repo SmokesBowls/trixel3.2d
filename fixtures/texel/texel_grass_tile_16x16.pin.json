@@ -1,0 +1,22 @@
+{
+  "pin_contract": "texel_image_fixture_pin.v1",
+  "fixture_file": "texel_grass_tile_16x16.png",
+  "sha256": "ab5cb28b956f418272dacb367395da958671faf7c6e096e2d5b2cf6fa4363d51",
+  "byte_length": 534,
+  "width": 16,
+  "height": 16,
+  "png_mode": "RGBA",
+  "visually_accepted": "2026-07-18",
+  "acceptance": "First Texel-to-Trixel ingress fixture. The exact PNG bytes are authority; never regenerate, retouch, recolor, resize, or replace them.",
+  "optional_provenance": {
+    "note": "Provenance only; carries no geometry authority.",
+    "generator": "Texel Studio snapshot 2026-07-02 (texel-studio/, no git history)",
+    "invocation": "POST /api/jobs kind=sprite.generate via server.py",
+    "job_id": "be648098-b31b-466a-ad08-a33a648cec03",
+    "model": "qwen3.5:9b (local Ollama)",
+    "sprite_type": "block",
+    "size": 16,
+    "palette": ["#3e6b2f", "#4f8a3d", "#6aab4e", "#8cc963", "#2f5223", "#7a5b3a"],
+    "agent_steps": 14
+  }
+}
