@@ -1,0 +1,257 @@
+{
+ "built_response": "texel_complete_edge_surface_built_response.json",
+ "construction": {
+  "adjacency_policy": "SHARED_COMPLETE_EDGES",
+  "gap_fill_mode": "COMPLETE_EDGE_SLAB",
+  "payload_sha256": "49396807a2d119328608b44203c0a8aae20cfe5ac0028e880676ac538bb7745b",
+  "request_id": "t32dreq_001241884d12dff0",
+  "surface_id": "t32dsurface_cd7eee9d7877c948",
+  "topology_policy": "HEIGHT_FIELD_COMPLETE_EDGE_CONNECTED_SURFACE",
+  "triangles": 1918,
+  "vertices": 3700
+ },
+ "declared_limitation": {
+  "collision": "No claim is made about downstream collision tooling. Collision remains denied and untested.",
+  "inventory_locked": {
+   "corner_count": 34,
+   "corners": [
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 2,
+     "lattice_y": 3
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 2,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 2,
+     "lattice_y": 15
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 4,
+     "lattice_y": 3
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 4,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 4,
+     "lattice_y": 6
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 5,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 5,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 5,
+     "lattice_y": 10
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 5,
+     "lattice_y": 15
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 6,
+     "lattice_y": 2
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 6,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 6,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 6,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 7,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 7,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 8,
+     "lattice_y": 6
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 8,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 8,
+     "lattice_y": 13
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 9,
+     "lattice_y": 4
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 9,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 10,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 11
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 11,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 11,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 12,
+     "lattice_y": 12
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 12,
+     "lattice_y": 13
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 13,
+     "lattice_y": 6
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 13,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 13,
+     "lattice_y": 12
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 14,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 15,
+     "lattice_y": 15
+    }
+   ]
+  },
+  "name": "PINCH_EDGE_NON_MANIFOLD",
+  "statement": "At lattice corners where diagonally opposed cells pair strictly higher/lower, the true solid has a vertical pinch edge; its boundary is non-manifold there by nature. Each inventoried edge interval carries exactly four direction-balanced incident triangles."
+ },
+ "evidence_images": {
+  "complete_edge_render": {
+   "file": "texel_complete_edge_surface_render.png",
+   "sha256": "25738c5f289747f95705c0bb0be0639bdbddd8929ce25d10b57831dc7d8b8c06"
+  },
+  "connected_vs_complete_edge": {
+   "file": "texel_connected_vs_complete_edge.png",
+   "note": "Left panel is the exact accepted connected-slab evidence bytes (842ca11d...), never rerendered.",
+   "sha256": "af07e19e4eeb1e58ea8bc8ac040e234dc50de48f97d16c5576bb4f5c7fd769ea"
+  }
+ },
+ "manifest_contract": "texel_complete_edge_surface_manifest.v1",
+ "milestone": "HEIGHT_FIELD_COMPLETE_EDGE_CONNECTED_SURFACE: stitched slab with complete shared wall edges and zero T-junctions, from the same pinned Texel fixture",
+ "proven": [
+  "one welded connected component",
+  "every welded undirected edge has exactly two incident triangles except the locked PINCH_EDGE_NON_MANIFOLD inventory, which has exactly four, direction-balanced",
+  "zero T-junctions by direct geometric vertex-on-edge scan",
+  "zero cracks, duplicate faces, degenerate triangles",
+  "consistent outward winding",
+  "exact top-face colors and projected heights from the pinned image",
+  "closed perimeter and underside",
+  "deterministic byte-identical repeated builds",
+  "independently recomputed wall-interval inventory matches every emitted chain",
+  "ALL_FACES_INDEPENDENT and HEIGHT_FIELD_CONNECTED_SURFACE byte-identical and unchanged"
+ ],
+ "source_fixture": {
+  "file": "texel_grass_tile_16x16.png",
+  "sha256": "ab5cb28b956f418272dacb367395da958671faf7c6e096e2d5b2cf6fa4363d51"
+ },
+ "visual_acceptance": "accepted 2026-07-19"
+}

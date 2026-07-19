@@ -23,7 +23,10 @@ QUAD_UVS = ([0.0, 0.0], [1.0, 0.0], [0.0, 1.0], [1.0, 1.0])
 
 def build_canonical_surface(request: dict[str, Any]) -> dict[str, Any]:
     """Build canonical geometry for the request's declared topology policy."""
-    if request["construction"]["topology_policy"] == "HEIGHT_FIELD_CONNECTED_SURFACE":
+    topology_policy = request["construction"]["topology_policy"]
+    if topology_policy == "HEIGHT_FIELD_COMPLETE_EDGE_CONNECTED_SURFACE":
+        return _build_complete_edge_connected_surface(request)
+    if topology_policy == "HEIGHT_FIELD_CONNECTED_SURFACE":
         return _build_connected_surface(request)
     return _build_independent_cell_extrusions(request)
 
@@ -340,6 +343,285 @@ def _build_connected_surface(request: dict[str, Any]) -> dict[str, Any]:
         appearance=appearance,
         topology_policy=request["construction"]["topology_policy"],
     )
+
+
+def _build_complete_edge_connected_surface(request: dict[str, Any]) -> dict[str, Any]:
+    """Build the stitched slab with complete shared wall edges (no T-junctions).
+
+    Identical footprint, heights, and colors to HEIGHT_FIELD_CONNECTED_SURFACE.
+    Each vertical wall is split at every incident elevation breakpoint at its
+    two end corners: the wall becomes a deterministic ladder triangulation
+    between its left and right corner height chains, so every neighboring wall
+    face shares identical vertices and complete edges. Horizontal wall edges
+    (top and bottom) stay complete full-cell edges shared with top faces.
+
+    Declared limitation PINCH_EDGE_NON_MANIFOLD: where diagonally opposed
+    cells pair strictly higher/lower, the true solid has a vertical pinch
+    edge and its boundary is non-manifold there by nature. Those inventoried
+    edges carry exactly four direction-balanced incident triangles; every
+    other welded edge carries exactly two. No claim is made about downstream
+    collision tooling; collision remains denied and untested.
+    """
+    planar = request["planar_config"]
+    gap_fill = request["gap_fill"]
+    vectors = request["orientation"]["vectors"]
+    right = _normalize(vectors["right"])
+    forward = _normalize(vectors["forward"])
+    up = _normalize(vectors["up"])
+    max_height_layers = int(request["vertical_metric"]["max_height_layers"])
+
+    half_right = _scale(right, float(planar["cell_width"]) / 2.0)
+    half_forward = _scale(forward, float(planar["cell_depth"]) / 2.0)
+    thickness = float(gap_fill["thickness_local_units"])
+    gap_color = [float(value) for value in gap_fill["resolved_color"]]
+    width = int(planar["field_width_columns"])
+    height_rows = int(planar["field_height_rows"])
+
+    cells = request["pixel_field_data"]
+    projections = [
+        project_worldfield_cell_to_worldcell(
+            cell["field_x"],
+            cell["field_y"],
+            cell["elevation"],
+            max_height_layers=max_height_layers,
+        )
+        for cell in cells
+    ]
+    heights = [
+        float(cast(dict[str, Any], projection["world_cell"])["world_cell_y"])
+        for projection in projections
+    ]
+    base_height = min(heights) - thickness
+
+    def cell_height(field_x: int, field_y: int) -> float | None:
+        if field_x < 0 or field_y < 0 or field_x >= width or field_y >= height_rows:
+            return None
+        return heights[field_y * width + field_x]
+
+    def lattice_breakpoints(lattice_x: int, lattice_y: int) -> list[float]:
+        incident: set[float] = set()
+        for cell_x, cell_y in (
+            (lattice_x - 1, lattice_y - 1),
+            (lattice_x, lattice_y - 1),
+            (lattice_x - 1, lattice_y),
+            (lattice_x, lattice_y),
+        ):
+            value = cell_height(cell_x, cell_y)
+            if value is not None:
+                incident.add(value)
+        return sorted(incident)
+
+    def center_at(field_x: int, field_y: int, elevation_value: float) -> list[float]:
+        column_offset = (field_x - float(planar["center_column"])) * float(planar["cell_width"])
+        row_offset = (field_y - float(planar["center_row"])) * float(planar["cell_depth"])
+        return _add(
+            _scale(right, column_offset),
+            _scale(forward, row_offset),
+            _scale(up, elevation_value),
+        )
+
+    positions: list[list[float]] = []
+    normals: list[list[float]] = []
+    uvs: list[list[float]] = []
+    colors: list[list[float]] = []
+    indices: list[int] = []
+    cell_ranges: list[dict[str, Any]] = []
+    primitive_provenance: list[dict[str, Any]] = []
+
+    # Wall spec per canonical direction: neighbor delta, outward normal sign,
+    # left/right corner lattice ids and horizontal corner offsets from center.
+    def wall_specs(field_x: int, field_y: int) -> list[tuple[str, tuple[int, int], list[float], tuple[int, int], tuple[int, int], list[float], list[float]]]:
+        minus_hr = _negate(half_right)
+        minus_hf = _negate(half_forward)
+        return [
+            ("-field_y", (field_x, field_y - 1), _negate(forward),
+             (field_x, field_y), (field_x + 1, field_y),
+             _add(minus_hf, minus_hr), _add(minus_hf, half_right)),
+            ("+field_x", (field_x + 1, field_y), right,
+             (field_x + 1, field_y), (field_x + 1, field_y + 1),
+             _add(half_right, minus_hf), _add(half_right, half_forward)),
+            ("+field_y", (field_x, field_y + 1), forward,
+             (field_x, field_y + 1), (field_x + 1, field_y + 1),
+             _add(half_forward, minus_hr), _add(half_forward, half_right)),
+            ("-field_x", (field_x - 1, field_y), _negate(right),
+             (field_x, field_y), (field_x, field_y + 1),
+             _add(minus_hr, minus_hf), _add(minus_hr, half_forward)),
+        ]
+
+    for ordinal, cell in enumerate(cells):
+        field_x = cell["field_x"]
+        field_y = cell["field_y"]
+        top_height = heights[ordinal]
+        flat_center = center_at(field_x, field_y, 0.0)
+        top_center = center_at(field_x, field_y, top_height)
+        base_center = center_at(field_x, field_y, base_height)
+        cell_color = [float(value) for value in cell["base_color"]]
+
+        surfaces: list[dict[str, Any]] = []
+        face_ordinal = 0
+
+        def emit_face(
+            role: str,
+            face: str,
+            face_positions: list[list[float]],
+            face_normals: list[list[float]],
+            face_uvs: list[list[float]],
+            face_color: list[float],
+            face_indices: list[int],
+        ) -> None:
+            nonlocal face_ordinal
+            vertex_start = len(positions)
+            index_start = len(indices)
+            positions.extend(face_positions)
+            normals.extend(face_normals)
+            uvs.extend(face_uvs)
+            colors.extend([face_color[:] for _ in face_positions])
+            indices.extend(vertex_start + local_index for local_index in face_indices)
+            surfaces.append({
+                "role": role,
+                "face": face,
+                "vertex_start": vertex_start,
+                "vertex_count": len(face_positions),
+                "index_start": index_start,
+                "index_count": len(face_indices),
+            })
+            primitive_provenance.append({
+                "primitive_start": index_start // 3,
+                "primitive_count": len(face_indices) // 3,
+                "cell_key": f"{field_x},{field_y}",
+                "source_cell_ordinal": ordinal,
+                "face_ordinal": face_ordinal,
+                "role": role,
+                "face": face,
+            })
+            face_ordinal += 1
+
+        top_quad = _quad(top_center, _negate(half_right), half_right, _negate(half_forward), half_forward)
+        emit_face(
+            "PRIMARY_PIXEL_FACE", "top", top_quad,
+            [up[:] for _ in range(4)], [uv[:] for uv in QUAD_UVS], cell_color,
+            list(QUAD_INDICES),
+        )
+        bottom_quad = _quad(base_center, _negate(half_right), half_right, half_forward, _negate(half_forward))
+        emit_face(
+            "NEUTRAL_GAP_FILL", "bottom", bottom_quad,
+            [_negate(up) for _ in range(4)], [uv[:] for uv in QUAD_UVS], gap_color,
+            list(QUAD_INDICES),
+        )
+
+        for face_name, neighbor_key, outward, left_lattice, right_lattice, left_offset, right_offset in wall_specs(field_x, field_y):
+            other_height = cell_height(*neighbor_key)
+            if other_height is None:
+                wall_bottom = base_height
+            elif other_height < top_height:
+                wall_bottom = other_height
+            else:
+                continue
+
+            left_cuts = [
+                value for value in lattice_breakpoints(*left_lattice)
+                if wall_bottom < value < top_height
+            ]
+            right_cuts = [
+                value for value in lattice_breakpoints(*right_lattice)
+                if wall_bottom < value < top_height
+            ]
+            left_chain = [wall_bottom] + left_cuts + [top_height]
+            right_chain = [wall_bottom] + right_cuts + [top_height]
+
+            left_base = _add(flat_center, left_offset)
+            right_base = _add(flat_center, right_offset)
+            span = top_height - wall_bottom
+            face_positions: list[list[float]] = []
+            face_uvs: list[list[float]] = []
+            left_ids: list[int] = []
+            right_ids: list[int] = []
+            for value in left_chain:
+                left_ids.append(len(face_positions))
+                face_positions.append(_add(left_base, _scale(up, value)))
+                face_uvs.append([0.0, (value - wall_bottom) / span])
+            for value in right_chain:
+                right_ids.append(len(face_positions))
+                face_positions.append(_add(right_base, _scale(up, value)))
+                face_uvs.append([1.0, (value - wall_bottom) / span])
+
+            face_indices: list[int] = []
+            i = 0
+            j = 0
+            while i < len(left_chain) - 1 or j < len(right_chain) - 1:
+                advance_left = j == len(right_chain) - 1 or (
+                    i < len(left_chain) - 1 and left_chain[i + 1] <= right_chain[j + 1]
+                )
+                if advance_left:
+                    triangle = (left_ids[i], right_ids[j], left_ids[i + 1])
+                    i += 1
+                else:
+                    triangle = (left_ids[i], right_ids[j], right_ids[j + 1])
+                    j += 1
+                a, b, c = triangle
+                winding_normal = _cross_of(
+                    _sub(face_positions[b], face_positions[a]),
+                    _sub(face_positions[c], face_positions[a]),
+                )
+                if _dot_of(winding_normal, outward) < 0.0:
+                    triangle = (a, c, b)
+                face_indices.extend(triangle)
+
+            emit_face(
+                "NEUTRAL_GAP_FILL", face_name, face_positions,
+                [outward[:] for _ in face_positions], face_uvs, gap_color,
+                face_indices,
+            )
+
+        cell_ranges.append({
+            "cell_key": f"{field_x},{field_y}",
+            "source_cell_ordinal": ordinal,
+            "field_x": field_x,
+            "field_y": field_y,
+            "world_cell": cast(dict[str, Any], projections[ordinal]["world_cell"]),
+            "disposition": "PRESERVED_1_TO_1",
+            "recipe": cell["recipe"],
+            "terrain": cell["terrain"],
+            "surfaces": surfaces,
+        })
+
+    geometry = {
+        "positions": positions,
+        "vertices": positions,
+        "normals": normals,
+        "uvs": uvs,
+        "colors": colors,
+        "indices": indices,
+    }
+    appearance = {
+        "policy": request["construction"]["appearance_policy"],
+        "recipe_references": sorted({cell["recipe"] for cell in cells}),
+        "gap_fill_color": gap_color,
+    }
+    return emit_built_surface(
+        request_id=request["identity"]["request_id"],
+        geometry=geometry,
+        cell_geometry_ranges=cell_ranges,
+        primitive_provenance=primitive_provenance,
+        appearance=appearance,
+        topology_policy=request["construction"]["topology_policy"],
+    )
+
+
+def _sub(left: Sequence[float], right_vector: Sequence[float]) -> list[float]:
+    return [float(left[index]) - float(right_vector[index]) for index in range(3)]
+
+
+def _cross_of(left: Sequence[float], right_vector: Sequence[float]) -> list[float]:
+    return [
+        left[1] * right_vector[2] - left[2] * right_vector[1],
+        left[2] * right_vector[0] - left[0] * right_vector[2],
+        left[0] * right_vector[1] - left[1] * right_vector[0],
+    ]
+
+
+def _dot_of(left: Sequence[float], right_vector: Sequence[float]) -> float:
+    return sum(left[index] * right_vector[index] for index in range(3))
 
 
 def _cell_face_quads(
