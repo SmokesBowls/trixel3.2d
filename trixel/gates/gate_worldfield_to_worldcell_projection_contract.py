@@ -41,7 +41,7 @@ def _try_call(fn: Any, *args: Any, **kwargs: Any) -> tuple[bool, str]:
 
 def _coordinate_seam_gate() -> list[bool]:
     checks: list[bool] = []
-    lock_path = REPO_ROOT / "conductor_building_blocks" / "terrain" / "docs" / "COORDINATE_SEAM_LOCK_V2.md"
+    lock_path = REPO_ROOT / "TRIXEL32D_COORDINATE_SEAM_LOCK.md"
     checks.append(_print_gate("COORDINATE_SEAM_LOCK_EXISTS", lock_path.exists()))
     lock_text = lock_path.read_text(encoding="utf-8") if lock_path.exists() else ""
     checks.append(_print_gate(
@@ -75,7 +75,7 @@ def main() -> int:
         print("[WORLDFIELD_TO_WORLDCELL_PROJECTION][ALL_GATES] false")
         return 1
 
-    import conductor_building_blocks.terrain.worldfield_to_worldcell_projection as bridge
+    import trixel.trixel32d_worldfield_to_worldcell_projection as bridge
 
     packet = bridge.project_worldfield_cell_to_worldcell(
         12,

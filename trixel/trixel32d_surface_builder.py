@@ -3,7 +3,7 @@ from __future__ import annotations
 import math
 from typing import Any, Sequence, cast
 
-from conductor_building_blocks.terrain.worldfield_to_worldcell_projection import (
+from trixel.trixel32d_worldfield_to_worldcell_projection import (
     project_worldfield_cell_to_worldcell,
 )
 from trixel.trixel32d_surface_emitter import emit_built_surface
