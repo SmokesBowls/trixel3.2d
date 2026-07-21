@@ -1,0 +1,228 @@
+{
+ "built_response": "texel_stone_tile_complete_edge_surface_built_response.json",
+ "construction": {
+  "adjacency_policy": "SHARED_COMPLETE_EDGES",
+  "gap_fill_mode": "COMPLETE_EDGE_SLAB",
+  "payload_sha256": "939c10c2a2de957b49c9a042b74c6e2aeac75ff03bbe037200cd35794962c7ce",
+  "request_id": "t32dreq_47840250a37b492f",
+  "surface_id": "t32dsurface_e33b7a00b15a4b68",
+  "topology_policy": "HEIGHT_FIELD_COMPLETE_EDGE_CONNECTED_SURFACE",
+  "triangles": 1888,
+  "vertices": 3648
+ },
+ "declared_limitation": {
+  "collision": "No claim is made about downstream collision tooling. Collision remains denied and untested.",
+  "inventory_locked": {
+   "corner_count": 31,
+   "corners": [
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 8,
+     "lattice_y": 1
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 3
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 3,
+     "lattice_y": 4
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 6,
+     "lattice_y": 4
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 6,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 9,
+     "lattice_y": 5
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 4,
+     "lattice_y": 6
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 14,
+     "lattice_y": 6
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 6,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 8,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 9,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 7
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 5,
+     "lattice_y": 8
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 6,
+     "lattice_y": 8
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 10,
+     "lattice_y": 8
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 5,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 6,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 7,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 8,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 12,
+     "lattice_y": 9
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 3,
+     "lattice_y": 10
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 9,
+     "lattice_y": 10
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 10,
+     "lattice_y": 10
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 7,
+     "lattice_y": 12
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 13,
+     "lattice_y": 12
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 1,
+     "lattice_y": 13
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 13,
+     "lattice_y": 13
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 3,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 3.0,
+     "lattice_x": 7,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 3.0,
+     "interval_low": 2.0,
+     "lattice_x": 9,
+     "lattice_y": 14
+    },
+    {
+     "interval_high": 4.0,
+     "interval_low": 2.0,
+     "lattice_x": 11,
+     "lattice_y": 14
+    }
+   ],
+   "policy": "PINCH_EDGE_NON_MANIFOLD"
+  }
+ },
+ "evidence_images": {
+  "complete_edge_render": {
+   "file": "texel_stone_tile_complete_edge_surface_render.png",
+   "sha256": "78ca79e70ea90cfa868a3c906301f97abec6983bbb710dee95b7d3300ee14182"
+  }
+ },
+ "manifest_contract": "texel_complete_edge_surface_manifest.v1",
+ "milestone": "Roadmap Ticket A: second unrelated tile built directly under HEIGHT_FIELD_COMPLETE_EDGE_CONNECTED_SURFACE, deliberately distinct palette and height character from the grass tile",
+ "proven": [
+  "deterministic byte-identical repeated build",
+  "independently recomputed pinch-edge inventory locked for this tile (31 corners, exact match against the geometric welded-mesh witness)",
+  "every welded undirected edge has exactly two incident triangles except the locked PINCH_EDGE_NON_MANIFOLD inventory, which has exactly four, direction-balanced",
+  "zero degenerate triangles",
+  "source PNG bytes unchanged"
+ ],
+ "source_fixture": {
+  "file": "texel_stone_tile_16x16.png",
+  "sha256": "7efca9f08a39585274660d028e6de293edca914f62fc9a8795e14068d77ebca2"
+ },
+ "visual_acceptance": "accepted 2026-07-20"
+}

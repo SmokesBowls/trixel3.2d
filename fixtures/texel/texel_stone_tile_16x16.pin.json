@@ -1,0 +1,30 @@
+{
+  "pin_contract": "texel_image_fixture_pin.v1",
+  "fixture_file": "texel_stone_tile_16x16.png",
+  "sha256": "7efca9f08a39585274660d028e6de293edca914f62fc9a8795e14068d77ebca2",
+  "byte_length": 310,
+  "width": 16,
+  "height": 16,
+  "png_mode": "RGBA",
+  "visually_accepted": "2026-07-19",
+  "acceptance": "Second Texel-to-Trixel ingress fixture (roadmap Ticket A, deliberately distinct palette and height character from the grass tile). The exact PNG bytes are authority; never regenerate, retouch, recolor, resize, or replace them.",
+  "optional_provenance": {
+    "note": "Provenance only; carries no geometry authority.",
+    "generator": "Texel Studio snapshot 2026-07-02 (texel-studio/, no git history)",
+    "invocation": "direct run_agent_stream call mirroring server.py POST /api/jobs kind=sprite.generate (no server/Redis process required; in-memory checkpointer)",
+    "model": "qwen3.5:9b (local Ollama)",
+    "sprite_type": "block",
+    "size": 16,
+    "prompt": "A weathered gray stone/rock ground tile, top-down view, rough rocky texture with cracks and small pebbles, seamless-looking, no grass, no green",
+    "palette": ["#7d7d78", "#9a9a94", "#5c5c58", "#c2c2ba", "#3f3f3c", "#a89f8a"],
+    "luminance_bt709_spread_vs_grass": {
+      "stone_min": 91.544,
+      "stone_max": 153.316,
+      "stone_spread": 61.772,
+      "grass_min": 66.177,
+      "grass_max": 171.133,
+      "grass_spread": 104.956,
+      "note": "Recomputed from raw pixel bytes at visual-acceptance time; confirms a genuinely different height character, not merely a different color."
+    }
+  }
+}
