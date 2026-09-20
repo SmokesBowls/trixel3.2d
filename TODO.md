@@ -359,3 +359,14 @@ Primary questions for that first scan:
 - Which atlas/recipe payloads have real consumers?
 
 Do not treat coupling warnings as failures until normalized by repo size. In tiny repos, a single gate-to-bridge route is expected proof-route coupling, not architecture debt.
+
+7. Handshake protocol
+- Preserve `worldfield_surface_builder.gd` as historical Godot capability evidence, not as the final consumer.
+- Use it to identify (a) the information Godot needs to display a surface and (b) legitimate downstream render operations.
+- Keep Trixel authoritative for canonical positions, primitive indices, topology/seams, coordinate projection, ownership/provenance, pixel-address mapping or UV ownership, and deterministic geometry ordering.
+- Godot may instantiate ArrayMesh/SurfaceTool and scene nodes, create materials with nearest-neighbor filtering, place nodes, and derive collision from the canonical mesh.
+- Do not silently assign normals or tangents. Declare whether either is canonical data or downstream render expansion.
+- Treat per-cell extrusion and a shared surface lattice as different topology policies, not different serializations.
+- Keep 16x16 source cells -> 17x17 corner samples separate from the historical 16x16 elevation samples -> 15x15 quads source model.
+- Next bounded proof: define one provisional `trixel32d_surface_built` fixture with prebuilt canonical geometry and cell provenance, then write a passive Godot consumer that displays it without calculating topology, applies nearest-neighbor material behavior, derives collision, and preserves supplied orientation and ordering.
+- Freeze `trixel32d_surface_built` only after that proof. Then work backward to the minimum `trixel32d_surface_request` and assign request-field ownership.

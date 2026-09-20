@@ -1,0 +1,34 @@
+{
+  "closure": "These exact files and hashes are the accepted evidence for HEIGHT_FIELD_CONNECTED_SURFACE. Do not rerender to replace them; a future improvement is a new topology_policy/gap_fill name, not an edit to this one.",
+  "construction": {
+    "built_response": "texel_connected_surface_built_response.json",
+    "built_response_sha256": "86d8b22013c03ca6b20dcbebeb5240309128d3d6b7258c3236aeca60a6459139",
+    "gap_fill_adjacency_policy": "SHARED_EDGE_STITCHED",
+    "gap_fill_mode": "CONNECTED_SLAB",
+    "golden_geometry_obj": "texel_connected_surface_geometry.obj",
+    "golden_geometry_obj_sha256": "cf0c28de11451af838208cbc141ed54c41d53bcf4db5d3924fad0c91f2497d16",
+    "note": "This is a distinct, permanently addressable construction policy, not an improved replacement for HEIGHT_FIELD_CELL_EXTRUSION -- both remain independently callable by declaring construction.topology_policy in the request. A future improvement is a new topology_policy/gap_fill name, never an edit to this one or to ALL_FACES_INDEPENDENT.",
+    "request_id": "t32dreq_001241884d12dff0",
+    "surface_id": "t32dsurface_f024725d200e470c",
+    "topology_policy": "HEIGHT_FIELD_CONNECTED_SURFACE"
+  },
+  "evidence_images": {
+    "lattice_vs_connected_comparison": {
+      "file": "texel_lattice_vs_connected.png",
+      "sha256": "885a6274bd6f67e6d3667d3e1aca3733510885eb9cc89554af651d13a5da9473"
+    },
+    "stitched_render": {
+      "file": "texel_connected_surface_render.png",
+      "sha256": "842ca11de8851082e979c5218a4b43918db5a4af0f06f7ea285849047fac4feb"
+    }
+  },
+  "manifest_contract": "texel_connected_surface_evidence_manifest.v1",
+  "milestone": "Second addressable surface policy over the same pinned Texel source as texel_ingress_evidence_manifest.json: HEIGHT_FIELD_CONNECTED_SURFACE / SHARED_EDGE_STITCHED, frozen beside -- not replacing -- HEIGHT_FIELD_CELL_EXTRUSION / ALL_FACES_INDEPENDENT.",
+  "regeneration": "tools/render_texel_connected_surface_evidence.py regenerates the built_response/render/comparison from the pinned source and the accepted lattice bytes; tools/freeze_texel_connected_surface_evidence.py (this file) adds only the golden .obj and this manifest on top, without altering either.",
+  "source_fixture": {
+    "file": "texel_grass_tile_16x16.png",
+    "pin": "texel_grass_tile_16x16.pin.json",
+    "sha256": "ab5cb28b956f418272dacb367395da958671faf7c6e096e2d5b2cf6fa4363d51"
+  },
+  "visually_accepted": "2026-09-20"
+}

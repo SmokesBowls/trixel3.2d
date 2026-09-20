@@ -1,0 +1,69 @@
+Yes, but one naming correction:
+
+`trixel32d_surface_request` is the **packet/contract name**, not the Python module.
+
+The known EngAInOS module is:
+
+```text
+tier1/engainos/gates/gate_trixel32d_handshake.py
+```
+
+Its job is to validate a packet whose identifying field is:
+
+```json
+{
+  "packet_type": "trixel32d_surface_request"
+}
+```
+
+The known contract document is:
+
+```text
+docs/contracts/TRIXEL32D_SURFACE_REQUEST_CONTRACT_v1.md
+```
+
+So what EngAInOS currently possesses is:
+
+```text
+Contract:
+    TRIXEL32D_SURFACE_REQUEST_CONTRACT_v1.md
+
+Packet type:
+    trixel32d_surface_request
+
+Validator module:
+    tier1/engainos/gates/gate_trixel32d_handshake.py
+
+Real packet-producing module:
+    does not exist yet
+
+Dispatch module to Trixel:
+    does not exist yet
+```
+
+The validator is real, but it is not the requester. It only knows how to inspect the proposed request and accept or reject its shape. The earlier inventory likewise identifies this gate and test as the existing consumer-side validation code. 
+
+Following the ownership chain we established, the missing EngAInOS-side modules will likely need separate responsibilities:
+
+```text
+MettaExt
+    produces world/spatial facts
+
+EngAInOS request builder
+    converts and authorizes those facts as
+    trixel32d_surface_request
+
+EngAInOS validator
+    gate_trixel32d_handshake.py
+
+EngAInOS dispatcher
+    transports the validated request to Trixel
+
+Trixel
+    returns trixel32d_surface_built
+
+EngAInOS response router
+    delivers the built result to Godot
+```
+
+So the first known anchor is indeed the `trixel32d_surface_request` contract, with `gate_trixel32d_handshake.py` as its existing EngAInOS module.
