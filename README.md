@@ -19,6 +19,21 @@ Current proven slices:
 
 This repo intentionally starts small. Files from the older pipeline should only be added when a failing proof identifies them as required.
 
+## Doctrine and design locks
+
+These documents preserve architectural rules that future implementation and proof work must not accidentally erase:
+
+- [`docs/TRIXEL_SURFACE_CONSERVATION_AND_FOLDING_DOCTRINE_V1.md`](docs/TRIXEL_SURFACE_CONSERVATION_AND_FOLDING_DOCTRINE_V1.md)
+  - formalizes **fold, do not stretch**
+  - treats source artwork as finite visual material rather than infinitely elastic texture paint
+  - unifies the original sprite/tile folding model with the larger printed-blanket-over-terrain model
+  - defines surface demand, visual material supply, source attribution, prohibited silent stretching/duplication, and a candidate proof path
+- [`docs/TRIXEL_PERCEPTUAL_PRESENTATION_DOCTRINE_UPDATE_V1.md`](docs/TRIXEL_PERCEPTUAL_PRESENTATION_DOCTRINE_UPDATE_V1.md)
+  - separates structural authority from camera-dependent perceptual presentation
+  - presentation may change how an accepted trixel is seen, but may not change what the trixel is
+
+Doctrine documents are not claims that the corresponding runtime solver already exists. Proven runtime behavior remains limited to independently gated slices.
+
 ## Verify
 
 ```bash
