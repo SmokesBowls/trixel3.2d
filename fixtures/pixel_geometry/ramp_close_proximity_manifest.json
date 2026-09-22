@@ -1,0 +1,15 @@
+{
+  "ramp_a": {
+    "far_segment_cells": 8,
+    "required_rise": 5.0,
+    "rotation_degrees": 90.0
+  },
+  "ramp_b": {
+    "far_segment_cells": 8,
+    "required_rise": 5.0,
+    "rotation_degrees": 0.0
+  },
+  "min_distance_between_ramps": 0.0,
+  "exact_coincidence_count": 4,
+  "obj": "ramp_close_proximity.obj"
+}

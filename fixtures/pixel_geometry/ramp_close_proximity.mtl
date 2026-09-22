@@ -1,0 +1,6 @@
+newmtl ramp_a_flat
+Kd 0.55 0.35 0.2
+illum 1
+newmtl ramp_b_flat
+Kd 0.2 0.35 0.55
+illum 1
