@@ -25,6 +25,7 @@ already-computed positions, never a rescaling of them.
 """
 from __future__ import annotations
 
+import copy
 import math
 from typing import Any
 
@@ -72,6 +73,25 @@ def verify_isometry(
     world_b = ramp_position_to_world(sample_b, path_x_offset=path_x_offset, ramp_z_offset=ramp_z_offset)
     after = distance(world_a, world_b)
     return abs(before - after) <= tol
+
+
+def translate_built_geometry(built: dict[str, Any], translation: Position) -> dict[str, Any]:
+    """Return a copy of a BUILT trixel32d_surface_builder packet with every
+    position moved by `translation`. This is what keeps terrain-local
+    height authority separate from world-placement authority: the
+    builder's own elevation/max_height_layers math never sees this
+    translation and stays in its ordinary integer-layer space -- this
+    function only moves an already-built artifact afterward, the same
+    translation-only discipline as embedding_v1.embed_rigid's whole-
+    footprint transform. It never touches vertex count, indices,
+    normals, colors, or any other field."""
+    dx, dy, dz = translation
+    translated = copy.deepcopy(built)
+    translated["geometry"]["positions"] = [
+        [p[0] + dx, p[1] + dy, p[2] + dz] for p in built["geometry"]["positions"]
+    ]
+    translated["geometry"]["vertices"] = translated["geometry"]["positions"]
+    return translated
 
 
 def terrain_attachment_edge(

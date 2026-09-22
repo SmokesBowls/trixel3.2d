@@ -1,0 +1,9 @@
+newmtl grass_flat
+Kd 0.25 0.55 0.2
+illum 1
+newmtl dirt_flat
+Kd 0.5 0.35 0.2
+illum 1
+newmtl gap_fill_flat
+Kd 0.35 0.3 0.25
+illum 1

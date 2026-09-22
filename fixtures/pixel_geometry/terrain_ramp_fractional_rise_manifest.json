@@ -1,0 +1,22 @@
+{
+  "far_segment_cells": 5,
+  "required_rise": 2.5,
+  "solved": {
+    "angle_degrees": 30.000000000000004,
+    "run": 4.330127018922194,
+    "chain_length": 5.0
+  },
+  "terrain_elevation_both_blocks": 0.0,
+  "max_height_layers": 1,
+  "upper_placement_translation": [
+    0.0,
+    2.5,
+    -8.330127018922195
+  ],
+  "attachment": {
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true,
+    "is_isometry": true
+  },
+  "obj": "terrain_ramp_fractional_rise.obj"
+}
