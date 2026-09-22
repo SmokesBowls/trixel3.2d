@@ -147,3 +147,53 @@ def embed_cylindrical_closed_wrap(footprint: dict) -> dict[tuple[int, int], Posi
         theta = x * angle_increment
         positions[(x, r)] = (radius * math.sin(theta), radius * (1.0 - math.cos(theta)), float(r))
     return positions
+
+
+def embed_declared_angle_ramp_fold(
+    footprint: dict, *, hinge_corner_x: int, angle_degrees: float
+) -> dict[tuple[int, int], Position]:
+    """Generalizes embed_hard_90_degree_hinge_fold to an arbitrary declared
+    angle instead of a hardwired 90 degrees. angle_degrees=90.0 reproduces
+    that function's output exactly -- proven directly by
+    gate_pixel_geometry_declared_angle_ramp_v1.py, which compares both
+    formulas at every corner rather than trusting this docstring.
+
+    The far side beyond the hinge is a RIGID rotation of a flat strip by
+    angle_degrees around the hinge line -- the same rotation
+    embed_rigid() performs, restricted to the corners beyond the hinge.
+    A rotation never stretches anything, for ANY angle, so this function
+    has no angle it is unsafe to accept on that basis. What it does NOT
+    do is answer whether a given angle_degrees actually reaches whatever
+    rise a caller needs -- that is
+    ramp_geometry_v1.solve_ramp_run_and_angle()'s job, deliberately kept
+    separate: this function only knows how to build the geometry once an
+    angle has already been determined to be reachable.
+
+    hinge_corner_x must land exactly on an existing cell boundary, same
+    domain rule as embed_hard_90_degree_hinge_fold -- REJECT_EMBEDDING
+    otherwise.
+    """
+    width = footprint["width"]
+    if isinstance(hinge_corner_x, bool) or not isinstance(hinge_corner_x, int):
+        raise ValueError("hinge_corner_x must be an int")
+    if not (0 < hinge_corner_x < width):
+        raise ValueError(
+            f"hinge_corner_x must land on an existing cell boundary strictly "
+            f"between 0 and {width}; REJECT_EMBEDDING for {hinge_corner_x}"
+        )
+
+    theta = math.radians(angle_degrees)
+    cos_t, sin_t = math.cos(theta), math.sin(theta)
+
+    positions: dict[tuple[int, int], Position] = {}
+    for x, r in corner_addresses(footprint):
+        if x <= hinge_corner_x:
+            positions[(x, r)] = (float(x), 0.0, float(r))
+        else:
+            offset = x - hinge_corner_x
+            positions[(x, r)] = (
+                float(hinge_corner_x) + offset * cos_t,
+                offset * sin_t,
+                float(r),
+            )
+    return positions

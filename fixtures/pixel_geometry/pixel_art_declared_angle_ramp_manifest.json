@@ -1,0 +1,20 @@
+{
+  "artwork": "pixel_fold_diagnostic_16x16.png",
+  "artwork_width": 16,
+  "artwork_height": 16,
+  "cell_metric": 1.0,
+  "hinge_corner_x": 8,
+  "far_segment_cells": 8,
+  "required_rise": 5.0,
+  "solved": {
+    "angle_degrees": 38.68218745348944,
+    "run": 6.244997998398398,
+    "chain_length": 8.0
+  },
+  "ramp": {
+    "obj": "pixel_art_declared_angle_ramp_16x16.obj",
+    "max_edge_length": 1.0000000000000004,
+    "uv_changed": false
+  },
+  "mtl": "pixel_art_fold_stretch.mtl"
+}

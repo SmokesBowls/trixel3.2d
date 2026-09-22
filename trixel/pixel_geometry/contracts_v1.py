@@ -22,6 +22,7 @@ EMBEDDING_FLAT = "flat_identity.v1"
 EMBEDDING_RIGID = "rigid_transform.v1"
 EMBEDDING_HARD_90_DEGREE_HINGE_FOLD = "hard_90_degree_hinge_fold.v1"
 EMBEDDING_CYLINDRICAL_CLOSED_WRAP = "cylindrical_closed_wrap.v1"
+EMBEDDING_DECLARED_ANGLE_RAMP_FOLD = "declared_angle_ramp_fold.v1"
 
 # Topology policy exercised by trials 1/2/2.5/artwork-fold: no topology
 # change is authorized -- the compiled adjacency must equal the cardinal,
