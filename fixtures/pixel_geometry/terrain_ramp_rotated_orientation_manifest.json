@@ -1,0 +1,23 @@
+{
+  "far_segment_cells": 8,
+  "required_rise": 5.0,
+  "solved": {
+    "angle_degrees": 38.68218745348944,
+    "run": 6.244997998398398,
+    "chain_length": 8.0
+  },
+  "rotation_degrees": 0.0,
+  "placement": {
+    "path_x_offset_param": -1.0,
+    "ramp_z_offset_param": -1.0,
+    "center_column_lower": 3.5,
+    "center_column_upper": -6.744997998398398,
+    "center_row": 3.5
+  },
+  "attachment": {
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true,
+    "is_isometry": true
+  },
+  "obj": "terrain_ramp_rotated_orientation.obj"
+}
