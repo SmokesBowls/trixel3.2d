@@ -1,0 +1,33 @@
+{
+  "central": {
+    "columns": 8,
+    "rows": 8,
+    "dirt_columns": [
+      3,
+      4
+    ],
+    "dirt_rows": [
+      3,
+      4
+    ]
+  },
+  "shift_a": [
+    0.0,
+    0.0,
+    -4.0
+  ],
+  "shift_b": [
+    4.0,
+    0.0,
+    0.0
+  ],
+  "attachment_a": {
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true
+  },
+  "attachment_b": {
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true
+  },
+  "obj": "terrain_hub_multi_ramp.obj"
+}
