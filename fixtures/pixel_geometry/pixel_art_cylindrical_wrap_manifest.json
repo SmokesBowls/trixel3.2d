@@ -1,0 +1,18 @@
+{
+  "artwork": "pixel_fold_diagnostic_16x16.png",
+  "artwork_width": 16,
+  "artwork_height": 16,
+  "cell_metric": 1.0,
+  "columns": 16,
+  "angle_increment_degrees": 22.5,
+  "cylinder": {
+    "obj": "pixel_art_cylinder_16x16.obj",
+    "radius": 2.5629154477415064,
+    "max_horizontal_edge_length": 1.0000000000000013,
+    "max_vertical_edge_length": 1.0,
+    "seam_position_gap": 6.277332399123883e-16,
+    "uv_changed": false,
+    "seam_declared_neighbors": true
+  },
+  "mtl": "pixel_art_fold_stretch.mtl"
+}
