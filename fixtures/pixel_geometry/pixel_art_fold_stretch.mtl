@@ -1,0 +1,7 @@
+newmtl pixel_art_diagnostic
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+map_Kd pixel_fold_diagnostic_16x16.png

@@ -1,0 +1,26 @@
+{
+  "artwork": "pixel_fold_diagnostic_16x16.png",
+  "artwork_width": 16,
+  "artwork_height": 16,
+  "cell_metric": 1.0,
+  "flat": {
+    "obj": "pixel_art_flat_16x16.obj",
+    "max_edge_length": 1.0
+  },
+  "hard_fold": {
+    "obj": "pixel_art_folded_16x16.obj",
+    "hinge_corner_x": 8,
+    "max_edge_length": 1.0,
+    "uv_changed": false
+  },
+  "forced_diagonal": {
+    "obj": "pixel_art_diagonal_stretch_16x16.obj",
+    "run": 1.0,
+    "rise": 1.0,
+    "measured_edge_length": 1.4142135623730951,
+    "stretch_factor": 1.4142135623730951,
+    "uv_changed": false,
+    "status": "TOXIC_CONTROL"
+  },
+  "mtl": "pixel_art_fold_stretch.mtl"
+}
