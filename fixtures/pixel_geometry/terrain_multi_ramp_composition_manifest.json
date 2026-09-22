@@ -1,0 +1,22 @@
+{
+  "scene_a": {
+    "rotation_degrees": 90.0,
+    "far_segment_cells": 8,
+    "required_rise": 5.0,
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true
+  },
+  "scene_b": {
+    "rotation_degrees": 0.0,
+    "far_segment_cells": 8,
+    "required_rise": 5.0,
+    "offset": [
+      0.0,
+      0.0,
+      -30.0
+    ],
+    "lower_attachment_matches": true,
+    "upper_attachment_matches": true
+  },
+  "obj": "terrain_multi_ramp_composition.obj"
+}
