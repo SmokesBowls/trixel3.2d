@@ -1,0 +1,63 @@
+mtllib courtyard_parts.mtl
+o east_ramp
+v 5.0 0.0 -1.0
+v 6.0 0.0 -1.0
+v 6.8 0.6 -1.0
+v 7.6 1.2 -1.0
+v 8.4 1.7999999999999998 -1.0
+v 9.2 2.4 -1.0
+v 10.0 3.0 -1.0
+v 5.0 0.0 0.0
+v 6.0 0.0 0.0
+v 6.8 0.6 0.0
+v 7.6 1.2 0.0
+v 8.4 1.7999999999999998 0.0
+v 9.2 2.4 0.0
+v 10.0 3.0 0.0
+v 5.0 0.0 1.0
+v 6.0 0.0 1.0
+v 6.8 0.6 1.0
+v 7.6 1.2 1.0
+v 8.4 1.7999999999999998 1.0
+v 9.2 2.4 1.0
+v 10.0 3.0 1.0
+usemtl dirt_flat
+f 2 9 3
+usemtl dirt_flat
+f 3 9 10
+usemtl dirt_flat
+f 3 10 4
+usemtl dirt_flat
+f 4 10 11
+usemtl dirt_flat
+f 4 11 5
+usemtl dirt_flat
+f 5 11 12
+usemtl dirt_flat
+f 5 12 6
+usemtl dirt_flat
+f 6 12 13
+usemtl dirt_flat
+f 6 13 7
+usemtl dirt_flat
+f 7 13 14
+usemtl dirt_flat
+f 9 16 10
+usemtl dirt_flat
+f 10 16 17
+usemtl dirt_flat
+f 10 17 11
+usemtl dirt_flat
+f 11 17 18
+usemtl dirt_flat
+f 11 18 12
+usemtl dirt_flat
+f 12 18 19
+usemtl dirt_flat
+f 12 19 13
+usemtl dirt_flat
+f 13 19 20
+usemtl dirt_flat
+f 13 20 14
+usemtl dirt_flat
+f 14 20 21

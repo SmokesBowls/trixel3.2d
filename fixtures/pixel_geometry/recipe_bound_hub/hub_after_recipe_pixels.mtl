@@ -1,0 +1,4 @@
+newmtl hub_recipe_atlas
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd hub_recipe_atlas.png

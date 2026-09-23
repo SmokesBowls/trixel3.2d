@@ -1,0 +1,63 @@
+mtllib courtyard_parts.mtl
+o exhibit_a
+v -14.0 0.0 13.0
+v -14.0 0.0 12.0
+v -14.0 0.6 11.2
+v -14.0 1.2 10.4
+v -14.0 1.7999999999999998 9.6
+v -14.0 2.4 8.8
+v -14.0 3.0 8.0
+v -13.0 0.0 13.0
+v -13.0 0.0 12.0
+v -13.0 0.6 11.2
+v -13.0 1.2 10.4
+v -13.0 1.7999999999999998 9.6
+v -13.0 2.4 8.8
+v -13.0 3.0 8.0
+v -12.0 0.0 13.0
+v -12.0 0.0 12.0
+v -12.0 0.6 11.2
+v -12.0 1.2 10.4
+v -12.0 1.7999999999999998 9.6
+v -12.0 2.4 8.8
+v -12.0 3.0 8.0
+usemtl exhibit_a_flat
+f 2 9 3
+usemtl exhibit_a_flat
+f 3 9 10
+usemtl exhibit_a_flat
+f 3 10 4
+usemtl exhibit_a_flat
+f 4 10 11
+usemtl exhibit_a_flat
+f 4 11 5
+usemtl exhibit_a_flat
+f 5 11 12
+usemtl exhibit_a_flat
+f 5 12 6
+usemtl exhibit_a_flat
+f 6 12 13
+usemtl exhibit_a_flat
+f 6 13 7
+usemtl exhibit_a_flat
+f 7 13 14
+usemtl exhibit_a_flat
+f 9 16 10
+usemtl exhibit_a_flat
+f 10 16 17
+usemtl exhibit_a_flat
+f 10 17 11
+usemtl exhibit_a_flat
+f 11 17 18
+usemtl exhibit_a_flat
+f 11 18 12
+usemtl exhibit_a_flat
+f 12 18 19
+usemtl exhibit_a_flat
+f 12 19 13
+usemtl exhibit_a_flat
+f 13 19 20
+usemtl exhibit_a_flat
+f 13 20 14
+usemtl exhibit_a_flat
+f 14 20 21

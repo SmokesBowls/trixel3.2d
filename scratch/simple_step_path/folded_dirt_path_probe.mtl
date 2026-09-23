@@ -1,0 +1,9 @@
+newmtl lower_dirt
+Kd 0.55 0.30 0.12
+Ka 0.00 0.00 0.00
+Ks 0.00 0.00 0.00
+
+newmtl folded_dirt
+Kd 0.42 0.22 0.08
+Ka 0.00 0.00 0.00
+Ks 0.00 0.00 0.00

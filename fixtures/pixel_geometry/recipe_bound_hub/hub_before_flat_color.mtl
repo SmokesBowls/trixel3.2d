@@ -1,0 +1,6 @@
+newmtl grass_flat
+Kd 0.141 0.498 0.125
+illum 1
+newmtl dirt_flat
+Kd 0.518 0.482 0.188
+illum 1

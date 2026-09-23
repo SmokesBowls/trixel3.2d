@@ -1,0 +1,34 @@
+{
+  "hub": {
+    "columns": 12,
+    "rows": 12
+  },
+  "north": {
+    "far_segment_cells": 5,
+    "required_rise": 3.0,
+    "angle_degrees": 36.86989764584402,
+    "run": 4.0
+  },
+  "south": {
+    "far_segment_cells": 5,
+    "required_rise": 2.5,
+    "angle_degrees": 30.000000000000004,
+    "run": 4.330127018922194,
+    "shift": [
+      0.0,
+      2.5,
+      10.330127018922195
+    ]
+  },
+  "east": {
+    "far_segment_cells": 5,
+    "required_rise": 3.0,
+    "angle_degrees": 36.86989764584402,
+    "run": 4.0
+  },
+  "pillar": {
+    "sides": 8,
+    "height_cells": 4
+  },
+  "obj": "trixel_capability_courtyard.obj"
+}

@@ -1,0 +1,27 @@
+newmtl grass_flat
+Kd 0.141 0.498 0.125
+illum 1
+newmtl dirt_flat
+Kd 0.518 0.482 0.188
+illum 1
+newmtl gap_fill_flat
+Kd 0.3 0.28 0.24
+illum 1
+newmtl exhibit_a_flat
+Kd 0.55 0.35 0.2
+illum 1
+newmtl exhibit_b_flat
+Kd 0.2 0.35 0.55
+illum 1
+newmtl wall_stone
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd courtyard_textures/stone_16x16.png
+newmtl demo_stone
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd courtyard_textures/cracked_rock_16x16.png
+newmtl pillar_diagnostic
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd pixel_fold_diagnostic_16x16.png

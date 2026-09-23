@@ -1,0 +1,908 @@
+{
+  "construction": {
+    "appearance_policy": "RECIPE_REFERENCE",
+    "ordering": "ROW_MAJOR",
+    "topology_policy": "HEIGHT_FIELD_CONNECTED_SURFACE"
+  },
+  "coordinate_space": "WORLD_FIELD_GRID_TO_LOCAL_Y_UP",
+  "gap_fill": {
+    "adjacency_policy": "SHARED_EDGE_STITCHED",
+    "enabled": true,
+    "mode": "CONNECTED_SLAB",
+    "resolved_color": [
+      0.28,
+      0.16,
+      0.08,
+      1.0
+    ],
+    "thickness_local_units": 0.5
+  },
+  "identity": {
+    "contract": "trixel32d_surface_request.v1",
+    "packet_type": "trixel32d_surface_request",
+    "provenance": {
+      "metric_layout_artifact_id": "manual.8x8.step_path.v1",
+      "source_scene_id": "simple_step_path_test",
+      "topology_artifact_id": "manual.simple_step.connected_surface.v1"
+    },
+    "request_id": "simple_step_path_001",
+    "source_scene_id": "simple_step_path_test"
+  },
+  "orientation": {
+    "basis_authority": "VECTORS",
+    "field_axis_binding": {
+      "field_x_increases_along": "RIGHT",
+      "field_y_increases_along": "FORWARD"
+    },
+    "tolerance": 1e-06,
+    "vectors": {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "right": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "packet_type": "trixel32d_surface_request",
+  "pixel_field_data": [
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 0,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 1,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 2,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 3,
+      "field_y": 0,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 4,
+      "field_y": 0,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 5,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 6,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 7,
+      "field_y": 0,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 0,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 1,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 2,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 3,
+      "field_y": 1,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 4,
+      "field_y": 1,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 5,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 6,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 7,
+      "field_y": 1,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 0,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 1,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 2,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 3,
+      "field_y": 2,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 4,
+      "field_y": 2,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 5,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 6,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 7,
+      "field_y": 2,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 0,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 1,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 2,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.5,
+      "field_x": 3,
+      "field_y": 3,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 0.5,
+      "field_x": 4,
+      "field_y": 3,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 5,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 6,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 0.0,
+      "field_x": 7,
+      "field_y": 3,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 0,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 1,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 2,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 3,
+      "field_y": 4,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 4,
+      "field_y": 4,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 5,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 6,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 7,
+      "field_y": 4,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 0,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 1,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 2,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 3,
+      "field_y": 5,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 4,
+      "field_y": 5,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 5,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 6,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 7,
+      "field_y": 5,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 0,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 1,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 2,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 3,
+      "field_y": 6,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 4,
+      "field_y": 6,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 5,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 6,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 7,
+      "field_y": 6,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 0,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 1,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 2,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 3,
+      "field_y": 7,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.55,
+        0.3,
+        0.12,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 4,
+      "field_y": 7,
+      "recipe": "desert.arid_flats",
+      "terrain": "dirt_path"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 5,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 6,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    },
+    {
+      "base_color": [
+        0.22,
+        0.62,
+        0.14,
+        1.0
+      ],
+      "elevation": 1.0,
+      "field_x": 7,
+      "field_y": 7,
+      "recipe": "forest.dense_canopy",
+      "terrain": "grass"
+    }
+  ],
+  "planar_config": {
+    "cell_depth": 1.0,
+    "cell_width": 1.0,
+    "center_column": 3.5,
+    "center_row": 3.5,
+    "field_coverage": "DENSE",
+    "field_height_rows": 8,
+    "field_width_columns": 8
+  },
+  "up_axis_policy": "MUST_BE_STANDARD_Y_UP_IN_PRIMARY_DIRECTION",
+  "vertical_metric": {
+    "granted_by": "cartographer",
+    "max_height_layers": 2,
+    "source_artifact_id": "manual.simple_step.height_metric.v1",
+    "unit": "meter",
+    "vertical_measurement_rule": "ELEVATION_TIMES_MAX_HEIGHT_LAYERS"
+  }
+}

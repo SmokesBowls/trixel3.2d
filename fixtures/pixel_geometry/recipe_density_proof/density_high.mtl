@@ -1,0 +1,4 @@
+newmtl density_high_atlas
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd density_high_atlas.png
