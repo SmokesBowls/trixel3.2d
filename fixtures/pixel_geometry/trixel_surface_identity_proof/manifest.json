@@ -1,0 +1,27 @@
+{
+  "contract": "trixel.trixel_surface_identity_proof.v1",
+  "width": 8,
+  "height": 8,
+  "hinge_corner_x": 4,
+  "ramp_angle_degrees": 45.0,
+  "base_density": 8,
+  "raised_density": 32,
+  "edit_cell": [
+    4,
+    7
+  ],
+  "edit_pixel_at_base_density": [
+    3,
+    5
+  ],
+  "edit_color": [
+    139,
+    90,
+    43
+  ],
+  "embodiments": [
+    "flat",
+    "hinge",
+    "ramp"
+  ]
+}

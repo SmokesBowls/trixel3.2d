@@ -1,0 +1,43 @@
+newmtl gap_fill_flat
+Kd 0.3 0.28 0.24
+illum 1
+newmtl hub_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/hub.png
+newmtl north_ramp_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/north_ramp.png
+newmtl north_terrace_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/north_terrace.png
+newmtl south_ramp_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/south_ramp.png
+newmtl south_terrace_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/south_terrace.png
+newmtl east_ramp_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/east_ramp.png
+newmtl east_terrace_art
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd atlases/east_terrace.png
+newmtl wall_stone
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd ../courtyard_textures/stone_16x16.png
+newmtl demo_stone
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd ../courtyard_textures/cracked_rock_16x16.png
+newmtl pillar_diagnostic
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd ../pixel_fold_diagnostic_16x16.png

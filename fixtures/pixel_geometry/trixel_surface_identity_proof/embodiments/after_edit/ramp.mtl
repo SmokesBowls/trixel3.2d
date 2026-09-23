@@ -1,0 +1,4 @@
+newmtl ramp_surface
+Kd 1.0 1.0 1.0
+illum 1
+map_Kd ../../generated_cache/after_edit/atlas_for_ramp.png

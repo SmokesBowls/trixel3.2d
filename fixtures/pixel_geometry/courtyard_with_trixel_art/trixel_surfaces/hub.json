@@ -1,0 +1,584 @@
+{
+  "contract": "trixel.pixel_surface.v1",
+  "width": 12,
+  "height": 12,
+  "cells": {
+    "0,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,0": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,0": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,0": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,1": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,1": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,1": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,2": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,2": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,2": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,3": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,3": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,3": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,4": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,4": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,4": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "1,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "2,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "3,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "4,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "5,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "8,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "9,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "10,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "11,5": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "0,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "1,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "2,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "3,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "4,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "5,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "8,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "9,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "10,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "11,6": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "0,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,7": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,7": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,7": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,8": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,8": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,8": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,9": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,9": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,9": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,10": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,10": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,10": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "0,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "1,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "2,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "3,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "4,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "5,11": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "6,11": {
+      "density": 16,
+      "recipe": "recipes/transitions/grass_to_dirt.json"
+    },
+    "7,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "8,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "9,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "10,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    },
+    "11,11": {
+      "density": 16,
+      "recipe": "recipes/terrain/forest.dense_canopy.json"
+    }
+  },
+  "edits": []
+}
