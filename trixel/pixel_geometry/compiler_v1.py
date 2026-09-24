@@ -213,6 +213,29 @@ def compile_footprint_fractional(
     }
 
 
+def compile_closed_wrap_footprint_fractional(
+    footprint: dict[str, Any],
+    cell_partitions: dict[tuple[int, int], list[FractionalPiece]],
+    piece_corner_positions: dict[FractionalCornerKey, Position],
+    *,
+    embedding_id: str,
+    seam_adjacency: dict[tuple[int, int], set[tuple[int, int]]],
+) -> dict[str, Any]:
+    """Fractional sibling of compile_closed_wrap_footprint(), built the same
+    way: every triangle/provenance/disposition comes from
+    compile_footprint_fractional(), and only compiled_adjacency and
+    topology_policy are overridden with the caller-declared seam_adjacency
+    (normally adjacency_v1.closed_wrap_seam_adjacency(footprint)). This
+    function never infers a seam edge. Sub-cell partitioning cannot add
+    or remove the declared seam."""
+    compiled = compile_footprint_fractional(
+        footprint, cell_partitions, piece_corner_positions, embedding_id=embedding_id
+    )
+    compiled["compiled_adjacency"] = seam_adjacency
+    compiled["topology_policy"] = TOPOLOGY_CLOSED_WRAP_SEAM
+    return compiled
+
+
 def edge_lengths(compiled: dict[str, Any]) -> list[float]:
     """Every cell edge length in the compiled geometry -- used to prove
     the declared cell_metric (1.0) held everywhere, including hinge

@@ -313,3 +313,62 @@ def embed_declared_angle_ramp_fold_fractional(
                         float(owner_row + v),
                     )
     return positions
+
+
+def embed_cylindrical_closed_wrap_fractional(
+    footprint: dict, pieces: list[FractionalPiece]
+) -> dict[FractionalCornerKey, Position]:
+    """Fractional sibling of embed_cylindrical_closed_wrap(): fractional
+    coordinates subdivide the geometry already owned by the parent cell;
+    they never independently re-sample the analytic circle.
+
+    The frozen cylinder is an N-sided polygon. Its trig formula is only
+    authoritative at integer corners; between them the proven surface is
+    each cell's flat face. Evaluating the trig formula at fractional x
+    would place points on the circle instead -- off the proven face,
+    stretching the 5% strips by ~2.6% at N=8 (measured and rejected as a
+    toxic control by gate_pixel_geometry_fractional_cylinder_body_v1.py).
+    Ramp/fold fractional embedding could reuse its formula directly only
+    because that mapping is affine over each cell; this one is not.
+
+    So each point is bilinearly interpolated inside the parent cell's
+    face, from the four corners the UNMODIFIED embed_cylindrical_closed_
+    wrap() produces for that cell:
+
+        P(u, v) = (1-u)(1-v)*nw + u(1-v)*ne + (1-u)v*sw + uv*se
+
+    The face is a planar rectangle, so this is metric-preserving: a
+    sub-edge of u-width w has length exactly w * 1.0. The (owner_cell,
+    u, v) address is exact Fraction arithmetic; its weights are floated
+    once, so the same declared boundary always yields the same world
+    position. At u, v in {0, 1} the weights are exactly 0.0/1.0 and the
+    four frozen corners are reproduced exactly.
+
+    This function has no opinion about the seam; seam adjacency comes
+    only from adjacency_v1.closed_wrap_seam_adjacency().
+    """
+    width, height = footprint["width"], footprint["height"]
+    frozen = embed_cylindrical_closed_wrap(footprint)
+
+    positions: dict[FractionalCornerKey, Position] = {}
+    for piece in pieces:
+        owner_x, owner_row = piece.owner_cell
+        if not (0 <= owner_x < width and 0 <= owner_row < height):
+            raise ValueError(f"owner_cell out of footprint domain: {piece.owner_cell}")
+        nw = frozen[(owner_x, owner_row)]
+        ne = frozen[(owner_x + 1, owner_row)]
+        sw = frozen[(owner_x, owner_row + 1)]
+        se = frozen[(owner_x + 1, owner_row + 1)]
+        for u in (piece.u_min, piece.u_max):
+            for v in (piece.v_min, piece.v_max):
+                key = (piece.owner_cell, u, v)
+                if key in positions:
+                    continue
+                w_nw = float((1 - u) * (1 - v))
+                w_ne = float(u * (1 - v))
+                w_sw = float((1 - u) * v)
+                w_se = float(u * v)
+                positions[key] = tuple(
+                    w_nw * nw[i] + w_ne * ne[i] + w_sw * sw[i] + w_se * se[i] for i in range(3)
+                )
+    return positions
