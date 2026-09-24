@@ -270,13 +270,15 @@ def embed_declared_angle_ramp_fold_fractional(
     reproducing the frozen math at fractional x, not extending it.
     hinge_corner_x must land on an existing cell boundary, the same
     domain rule embed_declared_angle_ramp_fold enforces -- REJECT_
-    EMBEDDING otherwise. Because a valid hinge_corner_x is always an
-    integer landing exactly between two adjacent cells, no single cell's
-    [owner_x, owner_x + 1] span can ever straddle it (there is no integer
-    strictly between owner_x and owner_x + 1), so every piece of a given
-    cell always resolves to the SAME formula branch -- there is no case
-    here where one piece could end up internally kinked between the flat
-    and folded formulas.
+    EMBEDDING otherwise. No cell interior straddles the hinge because the
+    hinge lies on an integer cell boundary. Cells adjacent to the hinge
+    may contain corners exactly on the hinge line; those points use the
+    flat branch while the remaining points on the folded-side cell use
+    the rotated branch. The two formulas coincide exactly at offset == 0
+    (proven directly, not just asserted, by
+    gate_pixel_geometry_fractional_hinge_contact_v1.py), so a piece whose
+    own u range starts exactly at the hinge is still a single planar
+    quad, never internally kinked between the two formulas.
     """
     width, height = footprint["width"], footprint["height"]
     if isinstance(hinge_corner_x, bool) or not isinstance(hinge_corner_x, int):
