@@ -24,7 +24,7 @@ from .contracts_v1 import (
 from .fractional_geometry_v1 import (
     FractionalPiece,
     is_trivial_piece,
-    pieces_partition_unit_interval,
+    pieces_partition_unit_square,
     pieces_share_owner,
     trivial_partition,
 )
@@ -160,8 +160,10 @@ def compile_footprint_fractional(
         pieces = cell_partitions.get(owner) or trivial_partition(owner)
         if not pieces_share_owner(pieces, owner):
             raise ValueError(f"every piece in cell_partitions[{owner}] must declare owner_cell == {owner}")
-        if not pieces_partition_unit_interval(pieces):
-            raise ValueError(f"pieces for cell {owner} must exactly partition [0, 1] with no gap or overlap")
+        if not pieces_partition_unit_square(pieces):
+            raise ValueError(
+                f"pieces for cell {owner} must exactly tile [0, 1] x [0, 1] with no gap or overlap"
+            )
 
         for piece in pieces:
             corner_keys = {
