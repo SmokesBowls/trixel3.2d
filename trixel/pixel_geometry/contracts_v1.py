@@ -32,6 +32,11 @@ EMBEDDING_DECLARED_ANGLE_RAMP_FOLD = "declared_angle_ramp_fold.v1"
 # plane embed_flat() uses.
 EMBEDDING_FLAT_FRACTIONAL = "flat_identity_fractional.v1"
 
+# Phase C: fractional sub-cell pieces embedded on the existing declared-
+# angle ramp/fold (embedding_v1.embed_declared_angle_ramp_fold_fractional
+# -- the fractional sibling of EMBEDDING_DECLARED_ANGLE_RAMP_FOLD).
+EMBEDDING_DECLARED_ANGLE_RAMP_FOLD_FRACTIONAL = "declared_angle_ramp_fold_fractional.v1"
+
 # Disposition values for compile_footprint_fractional(). PRESERVED_1_TO_1
 # mirrors the literal string compile_footprint() has always used, so a
 # cell compiled with the trivial (no-op) partition gets a byte-identical

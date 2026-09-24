@@ -245,3 +245,69 @@ def embed_flat_fractional(
                 if key not in positions:
                     positions[key] = (float(owner_x + u), 0.0, float(owner_row + v))
     return positions
+
+
+def embed_declared_angle_ramp_fold_fractional(
+    footprint: dict,
+    pieces: list[FractionalPiece],
+    *,
+    hinge_corner_x: int,
+    angle_degrees: float,
+) -> dict[FractionalCornerKey, Position]:
+    """Fractional sibling of embed_declared_angle_ramp_fold(): embeds every
+    distinct sub-cell corner referenced by `pieces` using the SAME
+    per-point formula the frozen function applies to integer corner
+    addresses, evaluated at a continuous local x = owner_x + u instead of
+    only at integer x:
+
+        if x <= hinge_corner_x: (x, 0, r)
+        else: (hinge_corner_x + offset*cos(theta), offset*sin(theta), r)
+            where offset = x - hinge_corner_x
+
+    That formula was already point-wise and already a continuous rigid
+    rotation (never a per-cell lookup), so evaluating it at more points
+    invents no new geometry rule -- this function's entire content is
+    reproducing the frozen math at fractional x, not extending it.
+    hinge_corner_x must land on an existing cell boundary, the same
+    domain rule embed_declared_angle_ramp_fold enforces -- REJECT_
+    EMBEDDING otherwise. Because a valid hinge_corner_x is always an
+    integer landing exactly between two adjacent cells, no single cell's
+    [owner_x, owner_x + 1] span can ever straddle it (there is no integer
+    strictly between owner_x and owner_x + 1), so every piece of a given
+    cell always resolves to the SAME formula branch -- there is no case
+    here where one piece could end up internally kinked between the flat
+    and folded formulas.
+    """
+    width, height = footprint["width"], footprint["height"]
+    if isinstance(hinge_corner_x, bool) or not isinstance(hinge_corner_x, int):
+        raise ValueError("hinge_corner_x must be an int")
+    if not (0 < hinge_corner_x < width):
+        raise ValueError(
+            f"hinge_corner_x must land on an existing cell boundary strictly "
+            f"between 0 and {width}; REJECT_EMBEDDING for {hinge_corner_x}"
+        )
+
+    theta = math.radians(angle_degrees)
+    cos_t, sin_t = math.cos(theta), math.sin(theta)
+
+    positions: dict[FractionalCornerKey, Position] = {}
+    for piece in pieces:
+        owner_x, owner_row = piece.owner_cell
+        if not (0 <= owner_x < width and 0 <= owner_row < height):
+            raise ValueError(f"owner_cell out of footprint domain: {piece.owner_cell}")
+        for u in (piece.u_min, piece.u_max):
+            for v in (piece.v_min, piece.v_max):
+                key = (piece.owner_cell, u, v)
+                if key in positions:
+                    continue
+                x_local = owner_x + u  # exact Fraction arithmetic
+                if x_local <= hinge_corner_x:
+                    positions[key] = (float(x_local), 0.0, float(owner_row + v))
+                else:
+                    offset = float(x_local - hinge_corner_x)
+                    positions[key] = (
+                        float(hinge_corner_x) + offset * cos_t,
+                        offset * sin_t,
+                        float(owner_row + v),
+                    )
+    return positions
