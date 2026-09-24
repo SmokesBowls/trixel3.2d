@@ -9,17 +9,28 @@ triangles and recording which cell owns which triangle.
 """
 from __future__ import annotations
 
+from fractions import Fraction
 from typing import Any
 
 from .addressing_v1 import cell_addresses, corner_index, validate_footprint_structure
 from .adjacency_v1 import source_adjacency
 from .contracts_v1 import (
     COMPILATION_ARTIFACT_CONTRACT,
+    DISPOSITION_PRESERVED_1_TO_1,
+    DISPOSITION_PRESERVED_FRACTIONAL_SUBDIVISION,
     TOPOLOGY_CLOSED_WRAP_SEAM,
     TOPOLOGY_PRESERVE_EXACT,
 )
+from .fractional_geometry_v1 import (
+    FractionalPiece,
+    is_trivial_piece,
+    pieces_partition_unit_interval,
+    pieces_share_owner,
+    trivial_partition,
+)
 
 Position = tuple[float, float, float]
+FractionalCornerKey = tuple[tuple[int, int], Fraction, Fraction]
 
 
 def compile_footprint(
@@ -94,6 +105,110 @@ def compile_closed_wrap_footprint(
     compiled["compiled_adjacency"] = seam_adjacency
     compiled["topology_policy"] = TOPOLOGY_CLOSED_WRAP_SEAM
     return compiled
+
+
+def compile_footprint_fractional(
+    footprint: dict[str, Any],
+    cell_partitions: dict[tuple[int, int], list[FractionalPiece]],
+    piece_corner_positions: dict[FractionalCornerKey, Position],
+    *,
+    embedding_id: str,
+) -> dict[str, Any]:
+    """Fractional sibling of compile_footprint(): a cell may own ONE OR
+    MORE geometric pieces instead of exactly one quad. Cells absent from
+    cell_partitions get the ordinary trivial [0,1] x [0,1] single piece
+    (fractional_geometry_v1.trivial_partition), so calling this with an
+    EMPTY cell_partitions reproduces compile_footprint()'s per-cell
+    triangles, provenance, dispositions, and adjacency with the SAME
+    semantics and the SAME world-space coordinates for every cell -- this
+    is the required 1.0-baseline regression, not a separate code path
+    that merely claims equivalence.
+
+    This function deliberately never shares a vertex between two
+    different pieces, or between two different cells: every piece gets
+    its own four fresh corner vertices, looked up from
+    piece_corner_positions by the piece's own (owner_cell, u, v) keys
+    (see embedding_v1.embed_flat_fractional). That no-welding guarantee
+    holds even in the trivial/empty-cell_partitions case, so for a
+    footprint with more than one cell the raw positions/indices LISTS are
+    necessarily longer than compile_footprint()'s shared-corner-array
+    output -- a representation difference, not a geometry difference.
+    Byte-for-byte list identity is achievable, and is required, only for
+    a single-cell footprint, where there is no cross-cell corner to
+    share in the first place (gate_pixel_geometry_fractional_baseline_v1
+    proves both: strict byte identity for one cell, and per-cell
+    coordinate + structural equality for many). Two pieces that share a
+    boundary meet because both corners were embedded from the identical
+    Fraction boundary value, not because any vertex was deduplicated or
+    merged after the fact.
+
+    compiled_adjacency is always adjacency_v1.source_adjacency(footprint)
+    -- cell-level adjacency is NEVER affected by sub-cell partitioning;
+    fractional pieces are strictly a below-the-cell concern, exactly as
+    the audit's "do not touch adjacency_v1.py" conclusion required.
+    """
+    validate_footprint_structure(footprint)
+    width, height = footprint["width"], footprint["height"]
+
+    positions: list[Position] = []
+    indices: list[int] = []
+    primitive_provenance: list[dict[str, Any]] = []
+    dispositions: dict[tuple[int, int], str] = {}
+
+    for x, r in cell_addresses(footprint):
+        owner = (x, r)
+        pieces = cell_partitions.get(owner) or trivial_partition(owner)
+        if not pieces_share_owner(pieces, owner):
+            raise ValueError(f"every piece in cell_partitions[{owner}] must declare owner_cell == {owner}")
+        if not pieces_partition_unit_interval(pieces):
+            raise ValueError(f"pieces for cell {owner} must exactly partition [0, 1] with no gap or overlap")
+
+        for piece in pieces:
+            corner_keys = {
+                "nw": (owner, piece.u_min, piece.v_min),
+                "ne": (owner, piece.u_max, piece.v_min),
+                "sw": (owner, piece.u_min, piece.v_max),
+                "se": (owner, piece.u_max, piece.v_max),
+            }
+            missing = [key for key in corner_keys.values() if key not in piece_corner_positions]
+            if missing:
+                raise ValueError(f"missing embedded position(s) for piece corner(s): {missing}")
+
+            base = len(positions)
+            positions.extend(
+                piece_corner_positions[corner_keys[name]] for name in ("nw", "ne", "sw", "se")
+            )
+            nw, ne, sw, se = base, base + 1, base + 2, base + 3
+            primitive_start = len(indices) // 3
+            indices.extend([nw, sw, ne, ne, sw, se])
+            primitive_provenance.append(
+                {
+                    "cell_address": [x, r],
+                    "piece_id": piece.piece_id,
+                    "primitive_start": primitive_start,
+                    "primitive_count": 2,
+                    "payload": footprint["payload"][r][x],
+                }
+            )
+
+        dispositions[owner] = (
+            DISPOSITION_PRESERVED_1_TO_1
+            if len(pieces) == 1 and is_trivial_piece(pieces[0])
+            else DISPOSITION_PRESERVED_FRACTIONAL_SUBDIVISION
+        )
+
+    return {
+        "contract": COMPILATION_ARTIFACT_CONTRACT,
+        "embedding_id": embedding_id,
+        "topology_policy": TOPOLOGY_PRESERVE_EXACT,
+        "footprint_width": width,
+        "footprint_height": height,
+        "compiled_adjacency": source_adjacency(footprint),
+        "dispositions": dispositions,
+        "positions": positions,
+        "indices": indices,
+        "primitive_provenance": primitive_provenance,
+    }
 
 
 def edge_lengths(compiled: dict[str, Any]) -> list[float]:

@@ -9,11 +9,14 @@ extrinsic placement, never intrinsic identity.
 from __future__ import annotations
 
 import math
+from fractions import Fraction
 from typing import Callable
 
 from .addressing_v1 import corner_addresses
+from .fractional_geometry_v1 import FractionalPiece
 
 Position = tuple[float, float, float]
+FractionalCornerKey = tuple[tuple[int, int], Fraction, Fraction]
 
 
 def embed_flat(footprint: dict) -> dict[tuple[int, int], Position]:
@@ -196,4 +199,49 @@ def embed_declared_angle_ramp_fold(
                 offset * sin_t,
                 float(r),
             )
+    return positions
+
+
+def embed_flat_fractional(
+    footprint: dict, pieces: list[FractionalPiece]
+) -> dict[FractionalCornerKey, Position]:
+    """Fractional sibling of embed_flat(): embeds every distinct sub-cell
+    corner referenced by `pieces` on the SAME flat X-Z plane, Y=0, using
+    the same one-world-unit-per-cell convention embed_flat() uses --
+    cell_origin plus local fraction, floated only at this boundary:
+
+        world_x = float(owner_x + u)
+        world_z = float(owner_row + v)
+
+    Corners are keyed by (owner_cell, u, v) rather than an integer corner
+    address, because an interior fractional corner (0 < u < 1) is not
+    part of addressing_v1's integer lattice at all -- it belongs only to
+    the cell that owns it, never shared with a neighboring cell (this
+    package still performs no welding/deduplication). Two pieces that
+    share a boundary (piece_a.u_max == piece_b.u_min -- the SAME Fraction
+    value by construction, see fractional_geometry_v1.partition_cell_u_
+    axis) collapse to the SAME dict key here, so both get the identical
+    embedded position computed exactly once -- never computed twice,
+    matched approximately, or welded after the fact.
+
+    When every piece is exactly the trivial [0,1] x [0,1] partition
+    (fractional_geometry_v1.trivial_partition), every corner key's (u, v)
+    is an integer in {0, 1}, and this function reproduces embed_flat()'s
+    corresponding position EXACTLY: Fraction arithmetic on integers is
+    exact, and float() of a small integer-valued Fraction is exact too,
+    so there is no rounding gap between the two paths at the trivial
+    partition -- this is what makes the 1.0-baseline regression provable
+    byte-for-byte rather than only approximately.
+    """
+    width, height = footprint["width"], footprint["height"]
+    positions: dict[FractionalCornerKey, Position] = {}
+    for piece in pieces:
+        owner_x, owner_row = piece.owner_cell
+        if not (0 <= owner_x < width and 0 <= owner_row < height):
+            raise ValueError(f"owner_cell out of footprint domain: {piece.owner_cell}")
+        for u in (piece.u_min, piece.u_max):
+            for v in (piece.v_min, piece.v_max):
+                key = (piece.owner_cell, u, v)
+                if key not in positions:
+                    positions[key] = (float(owner_x + u), 0.0, float(owner_row + v))
     return positions

@@ -24,6 +24,23 @@ EMBEDDING_HARD_90_DEGREE_HINGE_FOLD = "hard_90_degree_hinge_fold.v1"
 EMBEDDING_CYLINDRICAL_CLOSED_WRAP = "cylindrical_closed_wrap.v1"
 EMBEDDING_DECLARED_ANGLE_RAMP_FOLD = "declared_angle_ramp_fold.v1"
 
+# Fractional sub-cell geometry (embedding_v1.embed_flat_fractional /
+# compiler_v1.compile_footprint_fractional). Added for the first
+# fractional-coordinate proof: the whole-unit 1.0 cell lattice stays
+# authoritative for pixel ownership; this identifies ONLY the embedding
+# path that also knows how to place sub-cell corners on the same flat
+# plane embed_flat() uses.
+EMBEDDING_FLAT_FRACTIONAL = "flat_identity_fractional.v1"
+
+# Disposition values for compile_footprint_fractional(). PRESERVED_1_TO_1
+# mirrors the literal string compile_footprint() has always used, so a
+# cell compiled with the trivial (no-op) partition gets a byte-identical
+# disposition value to the non-fractional path. PRESERVED_FRACTIONAL_
+# SUBDIVISION is new: it is honest about a cell owning more than one
+# geometric piece while still owning it exactly (never a new pixel).
+DISPOSITION_PRESERVED_1_TO_1 = "PRESERVED_1_TO_1"
+DISPOSITION_PRESERVED_FRACTIONAL_SUBDIVISION = "preserved_fractional_subdivision.v1"
+
 # Topology policy exercised by trials 1/2/2.5/artwork-fold: no topology
 # change is authorized -- the compiled adjacency must equal the cardinal,
 # non-wrapping source_adjacency() exactly.
