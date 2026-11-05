@@ -1,0 +1,1560 @@
+{
+  "behavioral_gates": [
+    "test_all_transfers_follow_declared_edges_not_touching_positions",
+    "test_empty_rainfall_schedule_is_valid_zero_step_replay",
+    "test_exact_watershed_states_routes_ledger_and_totals",
+    "test_explicit_gravity_reorientation_changes_flow_not_graph",
+    "test_external_adapter_is_snapshotted_once_without_mutation",
+    "test_fixed_potential_fold_has_identical_state_and_bytes",
+    "test_fixture_has_independently_accounted_expected_ledger",
+    "test_frozen_adapter_has_detached_snapshots",
+    "test_input_order_cannot_change_result_or_provenance",
+    "test_loss_is_capped_at_available_water",
+    "test_rejects_invalid_topology_without_mutating_adapter_data",
+    "test_rejects_invalid_water_potential_and_embedding",
+    "test_rejects_missing_unknown_and_contradictory_physical_rules",
+    "test_rejects_missing_zero_and_nonfinite_gravity",
+    "test_rejects_unrepresentable_effective_potential",
+    "test_replay_and_serialization_are_exact",
+    "test_route_is_distinct_from_movement_and_sink_can_receive",
+    "test_routing_uses_metric_slope_then_exact_id_tie_break"
+  ],
+  "contract": "trixel.terrain_state_proof_evidence.v1",
+  "contract_sha256": "8b2bdf1eebc32f8bc0b0d4397cfd2b224817807abe3c3560a503f90d08150fe1",
+  "embeddings": {
+    "flat": {
+      "basin": [
+        3,
+        0,
+        1
+      ],
+      "basin_feed": [
+        3,
+        0,
+        0
+      ],
+      "channel": [
+        1,
+        0,
+        2
+      ],
+      "crest_e": [
+        1,
+        0,
+        0
+      ],
+      "crest_w": [
+        0,
+        0,
+        0
+      ],
+      "near_other": [
+        1,
+        0,
+        2
+      ],
+      "outlet": [
+        0,
+        0,
+        2
+      ],
+      "tributary": [
+        2,
+        0,
+        2
+      ],
+      "valley_e": [
+        1,
+        0,
+        1
+      ],
+      "valley_w": [
+        0,
+        0,
+        1
+      ]
+    },
+    "folded": {
+      "basin": [
+        3,
+        0,
+        1
+      ],
+      "basin_feed": [
+        3,
+        0,
+        0
+      ],
+      "channel": [
+        1,
+        1,
+        1
+      ],
+      "crest_e": [
+        1,
+        0,
+        0
+      ],
+      "crest_w": [
+        0,
+        0,
+        0
+      ],
+      "near_other": [
+        1,
+        1,
+        1
+      ],
+      "outlet": [
+        0,
+        1,
+        1
+      ],
+      "tributary": [
+        2,
+        1,
+        1
+      ],
+      "valley_e": [
+        1,
+        0,
+        1
+      ],
+      "valley_w": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  "expected": {
+    "accumulated_flow": {
+      "basin": 6,
+      "basin_feed": 0,
+      "channel": 7,
+      "crest_e": 0,
+      "crest_w": 0,
+      "near_other": 0,
+      "outlet": 13,
+      "tributary": 0,
+      "valley_e": 5,
+      "valley_w": 4
+    },
+    "flow_direction": {
+      "basin": null,
+      "basin_feed": "basin",
+      "channel": "outlet",
+      "crest_e": "valley_e",
+      "crest_w": "valley_w",
+      "near_other": null,
+      "outlet": null,
+      "tributary": "channel",
+      "valley_e": "channel",
+      "valley_w": "outlet"
+    },
+    "ledger": [
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 0,
+        "incoming_transfers": 6,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 6,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 6,
+        "rainfall": 6,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 3,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 1,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 3,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 5,
+        "rainfall": 5,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 4,
+        "rainfall": 4,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 1,
+        "water_before": 2
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 2,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 2,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 3,
+        "rainfall": 3,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 5,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 5,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 1,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 4,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 5,
+        "water_before": 6
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 3,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 4,
+        "water_before": 3
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 2,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 7,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 7,
+        "water_before": 2
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 5
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 4,
+        "water_before": 5
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 7,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 4,
+        "water_before": 7
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 3,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 4,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      }
+    ],
+    "states": [
+      {
+        "basin": 0,
+        "basin_feed": 0,
+        "channel": 1,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 2,
+        "outlet": 0,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 1
+      },
+      {
+        "basin": 6,
+        "basin_feed": 0,
+        "channel": 3,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 1,
+        "outlet": 2,
+        "tributary": 0,
+        "valley_e": 5,
+        "valley_w": 4
+      },
+      {
+        "basin": 5,
+        "basin_feed": 0,
+        "channel": 4,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 7,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      },
+      {
+        "basin": 4,
+        "basin_feed": 0,
+        "channel": 0,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 4,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      },
+      {
+        "basin": 3,
+        "basin_feed": 0,
+        "channel": 0,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 0,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      }
+    ],
+    "totals": {
+      "boundary_discharge": 13,
+      "declared_losses": 6,
+      "initial_water": 4,
+      "rainfall": 18,
+      "stored_water": 3
+    }
+  },
+  "fixture_id": "terrain_state.watershed_proof.v1",
+  "fixture_sha256": "268a08b8de30277c828ccca11dc618737c2339975b7e01812a01ec640daf9d72",
+  "limitations": [
+    "abstract graph, not a rendered mountain",
+    "storage sinks, not lake levels",
+    "no geology generation or erosion",
+    "material candidates, not recipe or artwork application",
+    "no Richat reconstruction or polygon-topology validation"
+  ],
+  "result": {
+    "accumulated_flow": {
+      "basin": 6,
+      "basin_feed": 0,
+      "channel": 7,
+      "crest_e": 0,
+      "crest_w": 0,
+      "near_other": 0,
+      "outlet": 13,
+      "tributary": 0,
+      "valley_e": 5,
+      "valley_w": 4
+    },
+    "candidate_materials": {
+      "basin": "standing_water_candidate",
+      "basin_feed": "unchanged_candidate",
+      "channel": "flow_affected_candidate",
+      "crest_e": "unchanged_candidate",
+      "crest_w": "unchanged_candidate",
+      "near_other": "unchanged_candidate",
+      "outlet": "flow_affected_candidate",
+      "tributary": "unchanged_candidate",
+      "valley_e": "flow_affected_candidate",
+      "valley_w": "flow_affected_candidate"
+    },
+    "contract": "trixel.terrain_state_result.v1",
+    "flow_direction": {
+      "basin": null,
+      "basin_feed": "basin",
+      "channel": "outlet",
+      "crest_e": "valley_e",
+      "crest_w": "valley_w",
+      "near_other": null,
+      "outlet": null,
+      "tributary": "channel",
+      "valley_e": "channel",
+      "valley_w": "outlet"
+    },
+    "input_provenance": {
+      "initial_water": {
+        "basin": 0,
+        "basin_feed": 0,
+        "channel": 1,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 2,
+        "outlet": 0,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 1
+      },
+      "policy": {
+        "contract": "trixel.terrain_physical_policy.v1",
+        "loss_per_step": {
+          "basin": 1,
+          "basin_feed": 0,
+          "channel": 0,
+          "crest_e": 0,
+          "crest_w": 0,
+          "near_other": 1,
+          "outlet": 0,
+          "tributary": 0,
+          "valley_e": 1,
+          "valley_w": 0
+        },
+        "outlet_rule": "discharge_all_after_loss.v1",
+        "potential_by_cell": {
+          "basin": 0,
+          "basin_feed": 2,
+          "channel": 1,
+          "crest_e": 6,
+          "crest_w": 6,
+          "near_other": 0,
+          "outlet": 0,
+          "tributary": 4,
+          "valley_e": 3,
+          "valley_w": 3
+        },
+        "potential_mode": "declared",
+        "potential_unit": "proof_potential_unit",
+        "roles": {
+          "basin": "storage_sink",
+          "basin_feed": "route",
+          "channel": "route",
+          "crest_e": "route",
+          "crest_w": "route",
+          "near_other": "storage_sink",
+          "outlet": "outlet",
+          "tributary": "route",
+          "valley_e": "route",
+          "valley_w": "route"
+        },
+        "routing": "steepest_descent_then_cell_id.v1",
+        "sink_rule": "retain_all_after_loss.v1",
+        "update_rule": "synchronous_one_edge_per_step.v1"
+      },
+      "rainfall_steps": [
+        {
+          "basin": 0,
+          "basin_feed": 6,
+          "channel": 0,
+          "crest_e": 5,
+          "crest_w": 4,
+          "near_other": 0,
+          "outlet": 0,
+          "tributary": 3,
+          "valley_e": 0,
+          "valley_w": 0
+        },
+        {
+          "basin": 0,
+          "basin_feed": 0,
+          "channel": 0,
+          "crest_e": 0,
+          "crest_w": 0,
+          "near_other": 0,
+          "outlet": 0,
+          "tributary": 0,
+          "valley_e": 0,
+          "valley_w": 0
+        },
+        {
+          "basin": 0,
+          "basin_feed": 0,
+          "channel": 0,
+          "crest_e": 0,
+          "crest_w": 0,
+          "near_other": 0,
+          "outlet": 0,
+          "tributary": 0,
+          "valley_e": 0,
+          "valley_w": 0
+        },
+        {
+          "basin": 0,
+          "basin_feed": 0,
+          "channel": 0,
+          "crest_e": 0,
+          "crest_w": 0,
+          "near_other": 0,
+          "outlet": 0,
+          "tributary": 0,
+          "valley_e": 0,
+          "valley_w": 0
+        }
+      ],
+      "topology": {
+        "contract": "trixel.terrain_topology_snapshot.v1",
+        "elevation_unit": "proof_elevation_unit",
+        "metric_unit": "proof_distance_unit",
+        "nodes": [
+          {
+            "cell_id": "basin",
+            "neighbors": [
+              {
+                "cell_id": "basin_feed",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 0
+          },
+          {
+            "cell_id": "basin_feed",
+            "neighbors": [
+              {
+                "cell_id": "basin",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 2
+          },
+          {
+            "cell_id": "channel",
+            "neighbors": [
+              {
+                "cell_id": "outlet",
+                "distance": 1
+              },
+              {
+                "cell_id": "tributary",
+                "distance": 1
+              },
+              {
+                "cell_id": "valley_e",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 1
+          },
+          {
+            "cell_id": "crest_e",
+            "neighbors": [
+              {
+                "cell_id": "crest_w",
+                "distance": 1
+              },
+              {
+                "cell_id": "valley_e",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 6
+          },
+          {
+            "cell_id": "crest_w",
+            "neighbors": [
+              {
+                "cell_id": "crest_e",
+                "distance": 1
+              },
+              {
+                "cell_id": "valley_w",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 6
+          },
+          {
+            "cell_id": "near_other",
+            "neighbors": [],
+            "reference_elevation": 0
+          },
+          {
+            "cell_id": "outlet",
+            "neighbors": [
+              {
+                "cell_id": "channel",
+                "distance": 1
+              },
+              {
+                "cell_id": "valley_w",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 0
+          },
+          {
+            "cell_id": "tributary",
+            "neighbors": [
+              {
+                "cell_id": "channel",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 4
+          },
+          {
+            "cell_id": "valley_e",
+            "neighbors": [
+              {
+                "cell_id": "channel",
+                "distance": 1
+              },
+              {
+                "cell_id": "crest_e",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 3
+          },
+          {
+            "cell_id": "valley_w",
+            "neighbors": [
+              {
+                "cell_id": "crest_w",
+                "distance": 1
+              },
+              {
+                "cell_id": "outlet",
+                "distance": 1
+              }
+            ],
+            "reference_elevation": 3
+          }
+        ],
+        "topology_id": "watershed.abstract_ten_nodes.v1"
+      }
+    },
+    "ledger": [
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 0,
+        "incoming_transfers": 6,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 6,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 6,
+        "rainfall": 6,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 3,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 1,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 3,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 5,
+        "rainfall": 5,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 4,
+        "rainfall": 4,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 1,
+        "water_before": 2
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 2,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 2,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 3,
+        "rainfall": 3,
+        "step": 1,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 5,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 5,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 1,
+        "rainfall": 0,
+        "step": 1,
+        "water_after": 4,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 5,
+        "water_before": 6
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 3,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 4,
+        "water_before": 3
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 1
+      },
+      {
+        "boundary_discharge": 2,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 7,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 7,
+        "water_before": 2
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 5
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 2,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 4,
+        "water_before": 5
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 4,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 7,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 4,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 4,
+        "water_before": 7
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 3,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin",
+        "declared_loss": 1,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 3,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "basin_feed",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "basin",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "channel",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_e",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "crest_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "valley_w",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "near_other",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 4,
+        "cell_id": "outlet",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": null,
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 4
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "tributary",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_e",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "channel",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      },
+      {
+        "boundary_discharge": 0,
+        "cell_id": "valley_w",
+        "declared_loss": 0,
+        "incoming_transfers": 0,
+        "outgoing_to": "outlet",
+        "outgoing_transfers": 0,
+        "rainfall": 0,
+        "step": 4,
+        "water_after": 0,
+        "water_before": 0
+      }
+    ],
+    "potential_by_cell": {
+      "basin": 0,
+      "basin_feed": 2,
+      "channel": 1,
+      "crest_e": 6,
+      "crest_w": 6,
+      "near_other": 0,
+      "outlet": 0,
+      "tributary": 4,
+      "valley_e": 3,
+      "valley_w": 3
+    },
+    "states": [
+      {
+        "basin": 0,
+        "basin_feed": 0,
+        "channel": 1,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 2,
+        "outlet": 0,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 1
+      },
+      {
+        "basin": 6,
+        "basin_feed": 0,
+        "channel": 3,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 1,
+        "outlet": 2,
+        "tributary": 0,
+        "valley_e": 5,
+        "valley_w": 4
+      },
+      {
+        "basin": 5,
+        "basin_feed": 0,
+        "channel": 4,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 7,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      },
+      {
+        "basin": 4,
+        "basin_feed": 0,
+        "channel": 0,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 4,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      },
+      {
+        "basin": 3,
+        "basin_feed": 0,
+        "channel": 0,
+        "crest_e": 0,
+        "crest_w": 0,
+        "near_other": 0,
+        "outlet": 0,
+        "tributary": 0,
+        "valley_e": 0,
+        "valley_w": 0
+      }
+    ],
+    "topology_id": "watershed.abstract_ten_nodes.v1",
+    "totals": {
+      "boundary_discharge": 13,
+      "declared_losses": 6,
+      "initial_water": 4,
+      "rainfall": 18,
+      "stored_water": 3
+    }
+  },
+  "scope": "isolated_terrain_state_proof_only"
+}

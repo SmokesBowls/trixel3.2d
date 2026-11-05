@@ -1,0 +1,16 @@
+{
+  "contract": "trixel.terrain_state_proof_manifest.v1",
+  "inputs": {
+    "docs/TERRAIN_STATE_LANE_A_CONTRACT_V1.md": "8b2bdf1eebc32f8bc0b0d4397cfd2b224817807abe3c3560a503f90d08150fe1",
+    "fixtures/terrain_state/watershed_v1.json": "268a08b8de30277c828ccca11dc618737c2339975b7e01812a01ec640daf9d72",
+    "tests/test_terrain_state_lane_a.py": "431c08a22da6d0bc73753dc635c208abc117785cf10d7c7b151a1536d44c1e91",
+    "trixel/gates/gate_terrain_state_lane_a_v1.py": "169e57826fb98a3011f5ccbbece755e99bd1f1069317bb5703234a872b1a6c4c",
+    "trixel/terrain_state/__init__.py": "0c4ec03dec4197a584b8c1fb252a52f3c1d420fe894af624886b444e03fed376",
+    "trixel/terrain_state/state_v1.py": "8d01564b4be73e03cfd13d6eef064ef95be9bdb9fd6939cbfd76fc482105f301"
+  },
+  "outputs": {
+    "evidence.json": "ced023285b8e593c60e775c2e58ce8f37eef23af792123ac25fc412d52d37f42",
+    "ledger.tsv": "d2bee3bad93139782634fc4cc7619bbfd8ab76550c742b2a15d2198edba152b7"
+  },
+  "scope": "isolated_terrain_state_proof_only"
+}
